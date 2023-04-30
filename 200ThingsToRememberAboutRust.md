@@ -32,11 +32,11 @@
 27. The `Arc` and `Rc` types provide shared ownership of heap-allocated values, and you can create references to the shared data.
 28. Rust's borrowing rules apply to both the stack and the heap.
 29. Lifetime elision is a feature where the Rust compiler can infer lifetimes for references in function signatures, reducing verbosity.
-30. The `std::mem::drop` function can be used to explicitly drop a value and its associated resources, even when it's still borrowed.
+30. The `std::mem::drop` function can be used to explicitly drop a value and its associated resources, even when it's still borrowed. (Danger Will Robinson)
 31. You can use the `std::mem::replace` function to replace a value in memory while maintaining a reference to the original value.
 32. Rust's `std::mem::swap` function enables you to safely swap the contents of two mutable references without violating borrowing rules.
 33. The `std::mem::transmute` function can be used to convert between types with the same size and alignment, but it should be used cautiously, as it can lead to undefined behavior if used incorrectly with references.
-34. Rust's `std::mem::ManuallyDrop` type can be used to wrap a value and prevent its `Drop` implementation from being called, allowing you to manage the lifetime of borrowed data manually.
+34. Rust's `std::mem::ManuallyDrop` type can be used to wrap a value and prevent its `Drop` implementation from being called, allowing you to manage the lifetime of borrowed data manually. (Danger Will Robinson)
 35. Borrowing slices, such as `&[T]` and `&mut [T]`, allows for efficient, safe access to contiguous sequences of elements.
 36. The `Cow` (Clone on Write) type allows for efficient, lazy cloning of data when mutation is needed while still using references.
 37. Rust's borrowing rules prevent iterator invalidation issues by ensuring that the underlying collection cannot be modified while iterating.
