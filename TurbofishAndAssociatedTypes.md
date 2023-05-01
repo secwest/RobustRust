@@ -802,7 +802,7 @@ async fn main() -> std::io::Result<()> {
 
 In this modified example, we added a new endpoint `/info_xml` that accepts JSON data but returns an XML response. We also added the Turbofish operator `::<_, _, _, web::Json<Info>>` to the `to` function to explicitly specify the response type. This makes it clear that the handler functions expect a `web::Json<Info>` parameter, and the Rust compiler can ensure the correct types are used.
 
-`<_, _, _, web::Json&lt;Info>>` is a type annotation for the `to()` method that specifies the expected type of the handler function. The `_` is a type placeholder, meaning the actual type will be inferred by the Rust compiler. This is useful when you want to provide only part of the type information, and let the compiler fill in the rest.
+`<_, _, _, web::Json<Info>>` is a type annotation for the `to()` method that specifies the expected type of the handler function. The `_` is a type placeholder, meaning the actual type will be inferred by the Rust compiler. This is useful when you want to provide only part of the type information, and let the compiler fill in the rest.
 
 In Actix Web, the `to()` method is used to specify the handler function for a route. The handler function takes a number of arguments depending on the configuration of the route. In general, a handler function can take up to 4 arguments:
 
@@ -811,7 +811,7 @@ In Actix Web, the `to()` method is used to specify the handler function for a ro
 3. `Query<T>`: Represents a typed query string.
 4. `Payload`: Represents the incoming request payload.
 
-In the code snippet, the type annotation `&lt;_, _, _, web::Json&lt;Info>>` specifies that the handler function expects the fourth argument to be of type `web::Json<Info>`. The `web::Json` type is a wrapper for deserialized JSON data. The other three arguments are left as `_`, which means the Rust compiler will infer their types.
+In the code snippet, the type annotation `<_, _, _, web::Json<Info>>` specifies that the handler function expects the fourth argument to be of type `web::Json<Info>`. The `web::Json` type is a wrapper for deserialized JSON data. The other three arguments are left as `_`, which means the Rust compiler will infer their types.
 
 The Turbofish operator is used here to provide more explicit type information for the Actix web framework, ensuring that the handler functions are correctly set up for the specified response types.
 
