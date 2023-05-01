@@ -234,8 +234,7 @@ fn main() {
 In this example, the `add` function takes two references to `Summable` instances, and the return type is specified as `T::Output`, which refers to the associated type `Output` of the `Summable` trait. This allows the `add` function to work with any type that implements the `Summable` trait.
 
 
-###  \
-Another Associated Types Example
+###  Another Associated Types Example
 
 In this example, we'll use associated types to create a flexible storage system for different types of values.
 
