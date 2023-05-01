@@ -540,7 +540,7 @@ In this example, we define two generic functions, `parse_numeric_list` and `sum_
 
 The Turbofish operator is used to explicitly provide the type parameter `T` when calling `parse_numeric_list` and `sum_numeric_list`. This is necessary because the Rust compiler cannot infer the desired numeric type automatically.
 
-The `main` function demonstrates how to use these generic functions with different numeric types (`i32` and `f64`). It parses two lists of strings into lists of numeric values, computes their sums, and prints the results. The Turbofish operator `::&lt;>` helps ensure the correct types are used when calling the generic functions.
+The `main` function demonstrates how to use these generic functions with different numeric types (`i32` and `f64`). It parses two lists of strings into lists of numeric values, computes their sums, and prints the results. The Turbofish operator `::<>` helps ensure the correct types are used when calling the generic functions.
 
 
 ### Turbofish Mistakes
