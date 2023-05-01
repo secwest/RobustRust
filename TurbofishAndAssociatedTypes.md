@@ -446,7 +446,7 @@ fn main() {
 
 In this example, we use the turbofish operator `::<>` to specify the type `Vec<i32>` for the
 
-In Rust, the turbofish operator (`::<>`) is primarily used to disambiguate generic function calls when the compiler cannot infer the associated types. Here's an example of a situation where turbofish is necessary:
+Here's another example of a situation where turbofish is necessary:
 
 
 ```
