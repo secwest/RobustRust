@@ -1,4 +1,3 @@
-<!-
 
 ## Understanding the Rust Turbofish operator (::<>) and Associated Types
 
