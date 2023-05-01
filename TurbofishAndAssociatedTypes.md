@@ -816,7 +816,7 @@ In the code snippet, the type annotation `<_, _, _, web::Json<Info>>` specifies 
 The Turbofish operator is used here to provide more explicit type information for the Actix web framework, ensuring that the handler functions are correctly set up for the specified response types.
 
 
-### RealWorld turbofish #2: `serde`
+### RealWorld Turbofish #2: `serde`
 
 In this example, we will look at the popular Rust library called `serde`, which is used for serializing and deserializing data structures. The `serde_json` crate is a part of the `serde` ecosystem and provides support for JSON data handling. In certain cases, the Rust compiler cannot infer the type information while using `serde_json`, and the turbofish operator is helpful for specifying types explicitly.
 
