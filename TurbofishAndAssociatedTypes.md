@@ -765,7 +765,7 @@ async fn main() -> std::io::Result<()> {
 ```
 
 
-In this example, we define a simple Actix web server with a single POST endpoint `/info` that accepts and returns JSON data. The `info` handler function accepts a `web::Json&lt;Info>` parameter, where `Info` is a struct that derives `Deserialize`.
+In this example, we define a simple Actix web server with a single POST endpoint `/info` that accepts and returns JSON data. The `info` handler function accepts a `web::Json<Info>` parameter, where `Info` is a struct that derives `Deserialize`.
 
 When defining the route for the `/info` endpoint, we need to specify how to handle incoming requests, and we use the `to` function from the `actix-web` library. In this case, we want to handle incoming JSON data with the `info` handler function. The Turbofish operator is not explicitly used here, but it's implicitly used by the `actix-web` macro system.
 
