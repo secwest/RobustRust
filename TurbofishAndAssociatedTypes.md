@@ -809,7 +809,7 @@ The Turbofish operator is used here to provide more explicit type information fo
 
 The Rust turbofish operator is an essential tool for working with generic functions and associated types, as it helps explicitly specify type information that the compiler cannot infer.
 
- The syntax for the turbofish operator is `::&lt;Type>`, and it is used in conjunction with a function call or type constructor to provide the necessary type hints. The turbofish operator is particularly useful when working with associated types, which are types that are specified within the context of a trait or type definition. Associated types help create more flexible and reusable code by allowing the implementation of a trait to define the specific types associated with that implementation. 
+ The syntax for the turbofish operator is `::<Type>`, and it is used in conjunction with a function call or type constructor to provide the necessary type hints. The turbofish operator is particularly useful when working with associated types, which are types that are specified within the context of a trait or type definition. Associated types help create more flexible and reusable code by allowing the implementation of a trait to define the specific types associated with that implementation. 
 
 When working with associated types in Rust, it is common to encounter situations where the compiler cannot determine the correct type based solely on the surrounding context. In these cases, the turbofish operator comes in handy, enabling developers to provide the missing type information explicitly. 
 
