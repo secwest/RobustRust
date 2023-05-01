@@ -653,7 +653,7 @@ In this example, we have a generic `create_vec` function that creates a `Vec` of
 
 In the `main` function, when we call the `create_vec` function, the Rust compiler cannot infer the type `T` because there is no information available to determine the desired type of the vector.
 
-To resolve this ambiguity, we can use the turbofish operator when calling the `create_vec` function, like this: `create_vec::&lt;u32>()`. This explicitly tells the compiler that we want to create a `Vec&lt;u32>`, allowing the code to compile and run successfully.
+To resolve this ambiguity, we can use the turbofish operator when calling the `create_vec` function, like this: `create_vec::<u32>()`. This explicitly tells the compiler that we want to create a `Vec<u32>`, allowing the code to compile and run successfully.
 
 
 ### When The Rust Compiler Can Infer Types
