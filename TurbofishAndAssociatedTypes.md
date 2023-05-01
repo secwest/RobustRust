@@ -328,7 +328,7 @@ pub trait Iterator {
 ```
 
 
-The `Iterator` trait has an associated type `Item`, which represents the type of elements the iterator will yield. The `next` method is used to get the next element from the iterator, returning an `Option&lt;Self::Item>`. When there are no more elements, `next` returns `None`.
+The `Iterator` trait has an associated type `Item`, which represents the type of elements the iterator will yield. The `next` method is used to get the next element from the iterator, returning an `Option<Self::Item>`. When there are no more elements, `next` returns `None`.
 
 
 #### Implementing the Iterator Trait
