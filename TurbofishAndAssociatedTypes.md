@@ -93,7 +93,7 @@ In Rust, specific types and associated types serve different purposes. Specific 
 
 ### Specific Types
 
-Specific types are concrete types in Rust, such as `i32`, `String`, `Vec&lt;T>`, and custom structs or enums. These types can be used directly in variable declarations, function arguments, and return types.
+Specific types are concrete types in Rust, such as `i32`, `String`, `Vec<T>`, and custom structs or enums. These types can be used directly in variable declarations, function arguments, and return types.
 
 For example, consider a function that calculates the square of an integer:
 
