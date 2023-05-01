@@ -816,6 +816,82 @@ In the code snippet, the type annotation `<_, _, _, web::Json<Info>>` specifies 
 The Turbofish operator is used here to provide more explicit type information for the Actix web framework, ensuring that the handler functions are correctly set up for the specified response types.
 
 
+### RealWorld turbofish #2: `serde`
+
+In this example, we will look at the popular Rust library called `serde`, which is used for serializing and deserializing data structures. The `serde_json` crate is a part of the `serde` ecosystem and provides support for JSON data handling. In certain cases, the Rust compiler cannot infer the type information while using `serde_json`, and the turbofish operator is helpful for specifying types explicitly.
+
+Consider a simple JSON string that represents a user, and we want to deserialize it into a `User` struct:
+
+
+```
+use serde::Deserialize;
+use serde_json::Value;
+
+#[derive(Deserialize, Debug)]
+struct User {
+    name: String,
+    age: u32,
+}
+
+fn main() {
+    let json = r#"
+        {
+            "name": "John Doe",
+            "age": 30
+        }
+    "#;
+
+    let user: User = serde_json::from_str(json).unwrap();
+    println!("User: {:?}", user);
+}
+```
+
+
+In the example above, the compiler can infer the type of `user` because it is explicitly annotated with `User`. However, if we want to deserialize JSON data into a more complex data structure, like a `HashMap`, we might need to use the turbofish operator to help the compiler with type inference:
+
+
+```
+use serde::Deserialize;
+use serde_json::Value;
+use std::collections::HashMap;
+
+#[derive(Deserialize, Debug)]
+struct User {
+    name: String,
+    age: u32,
+}
+
+fn main() {
+    let json = r#"
+        {
+            "user1": {
+                "name": "John Doe",
+                "age": 30
+            },
+            "user2": {
+                "name": "Jane Doe",
+                "age": 28
+            }
+        }
+    "#;
+
+    let users: HashMap<String, User> = serde_json::from_str(json).unwrap();
+    println!("Users: {:?}", users);
+}
+```
+
+
+In this example, we need to deserialize the JSON data into a `HashMap&lt;String, User>`. If we were to omit the type annotation for the `users` variable, the compiler would not be able to infer the correct type, and an error would occur. To resolve this issue, we can use the turbofish operator with the `serde_json::from_str` function:
+
+
+```
+let users = serde_json::from_str::<HashMap<String, User>>(json).unwrap();
+```
+
+
+By using the turbofish operator, we explicitly specify the type of the data structure we want to deserialize our JSON data into, allowing the compiler to understand our intent and ensuring the correct type is used.
+
+
 ### Turbofish Recap
 
 The Rust turbofish operator is an essential tool for working with generic functions and associated types, as it helps explicitly specify type information that the compiler cannot infer.
