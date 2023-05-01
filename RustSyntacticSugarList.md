@@ -1,5 +1,4 @@
 
-
 Rust Syntactic Sugar
 
 Here's a list of shorthand notations, shortcuts, and other syntactically unusual aspects of Rust, along with explanations and code examples:
@@ -450,12 +449,10 @@ fn main() {
     change(&mut s);
     println!("{}", s);
 }
-
 ```
 
 
-
-1. Reference Operator:
+Reference Operator:
 
 
 ```
@@ -464,12 +461,10 @@ fn main() {
     let y = &x;
     println!("The value of y is: {}", y);
 }
-
 ```
 
 
-
-1. Dereference Operator:
+Dereference Operator:
 
 
 ```
@@ -481,12 +476,10 @@ fn main() {
 }
 
 }
-
 ```
 
 
-
-1. Ownership Transfer:
+Ownership Transfer:
 
 
 ```
@@ -495,12 +488,10 @@ fn main() {
     let y = x;
     println!("The value of y is: {}", y);
 }
-
 ```
 
 
-
-1. Borrowing:
+Borrowing:
 
 
 ```
@@ -512,12 +503,10 @@ fn main() {
     let s = String::from("Hello, world!");
     print_length(&s);
 }
-
 ```
 
 
-
-1. Impl Trait:
+Impl Trait:
 
 
 ```
