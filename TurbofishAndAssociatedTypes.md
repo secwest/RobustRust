@@ -444,9 +444,9 @@ fn main() {
 ```
 
 
-In this example, we use the turbofish operator `::&lt;>` to specify the type `Vec&lt;i32>` for the
+In this example, we use the turbofish operator `::<>` to specify the type `Vec<i32>` for the
 
-In Rust, the turbofish operator (`::&lt;>`) is primarily used to disambiguate generic function calls when the compiler cannot infer the associated types. Here's an example of a situation where turbofish is necessary:
+In Rust, the turbofish operator (`::<>`) is primarily used to disambiguate generic function calls when the compiler cannot infer the associated types. Here's an example of a situation where turbofish is necessary:
 
 
 ```
@@ -487,14 +487,14 @@ To resolve this ambiguity, we can use the turbofish operator in two ways:
 
 
 1. Specify the type when binding the result to a variable, like `let sum: i32 = parse_and_add(a, b).unwrap();`.
-2. Use turbofish directly on the function call, like `let sum = parse_and_add::&lt;i32>(a, b).unwrap();`.
+2. Use turbofish directly on the function call, like `let sum = parse_and_add::<i32>(a, b).unwrap();`.
 
 Both methods disambiguate the type `T` and allow the code to compile and run successfully.
 
 
 ### Turbofish Example
 
-The Turbofish operator `::&lt;>` in Rust is used to explicitly provide generic type parameters in situations where the compiler cannot infer them automatically. It helps clarify the intent of the code and avoid potential ambiguity. Here's an example of a small utility that uses the Turbofish operator to create a generic sum function for different numeric types.
+The Turbofish operator `::<>` in Rust is used to explicitly provide generic type parameters in situations where the compiler cannot infer them automatically. It helps clarify the intent of the code and avoid potential ambiguity. Here's an example of a small utility that uses the Turbofish operator to create a generic sum function for different numeric types.
 
 
 ```
