@@ -881,7 +881,7 @@ fn main() {
 ```
 
 
-In this example, we need to deserialize the JSON data into a `HashMap&lt;String, User>`. If we were to omit the type annotation for the `users` variable, the compiler would not be able to infer the correct type, and an error would occur. To resolve this issue, we can use the turbofish operator with the `serde_json::from_str` function:
+In this example, we need to deserialize the JSON data into a `HashMap<String, User>`. If we were to omit the type annotation for the `users` variable, the compiler would not be able to infer the correct type, and an error would occur. To resolve this issue, we can use the turbofish operator with the `serde_json::from_str` function:
 
 
 ```
