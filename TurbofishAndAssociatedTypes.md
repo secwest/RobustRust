@@ -800,7 +800,7 @@ async fn main() -> std::io::Result<()> {
 ```
 
 
-In this modified example, we added a new endpoint `/info_xml` that accepts JSON data but returns an XML response. We also added the Turbofish operator `::&lt;_, _, _, web::Json&lt;Info>>` to the `to` function to explicitly specify the response type. This makes it clear that the handler functions expect a `web::Json&lt;Info>` parameter, and the Rust compiler can ensure the correct types are used.
+In this modified example, we added a new endpoint `/info_xml` that accepts JSON data but returns an XML response. We also added the Turbofish operator `::<_, _, _, web::Json<Info>>` to the `to` function to explicitly specify the response type. This makes it clear that the handler functions expect a `web::Json<Info>` parameter, and the Rust compiler can ensure the correct types are used.
 
 The Turbofish operator is used here to provide more explicit type information for the Actix web framework, ensuring that the handler functions are correctly set up for the specified response types.
 
