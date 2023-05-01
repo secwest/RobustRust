@@ -494,7 +494,7 @@ Both methods disambiguate the type `T` and allow the code to compile and run suc
 
 ### Turbofish Example
 
-The Turbofish operator `::<>` in Rust is used to explicitly provide generic type parameters andd helps clarify the intent of the code and avoid potential ambiguity. Here's an example of a small utility that uses the Turbofish operator to create a generic sum function for different numeric types.
+Here's an example of a small utility that uses the Turbofish operator to create a generic sum function for different numeric types.
 
 
 ```
