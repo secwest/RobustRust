@@ -279,7 +279,7 @@ impl<T> Storage for Container<T> {
 ```
 
 
-In this example, we implement the `Storage` trait for `Container&lt;T>` and specify the associated type `Value` as `T`. The `set` and `get` methods allow us to store and retrieve values of type `T`.
+In this example, we implement the `Storage` trait for `Container<T>` and specify the associated type `Value` as `T`. The `set` and `get` methods allow us to store and retrieve values of type `T`.
 
 
 #### Using the Storage Trait
