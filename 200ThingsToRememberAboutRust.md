@@ -165,7 +165,6 @@
 160. Rust's `std::ops::Try` trait can be implemented for custom types to enable error handling with borrowed data.
 161. Rust's `std::ops::Neg` trait can be implemented for custom types to enable negation of borrowed data.
 162. Rust's `std::ops::From` and `std::ops::Into` traits can be implemented for custom types to enable conversion between borrowed data and custom reference types.
-163. Rust's `std::ops::Add`, `std::ops::Sub`, `std::ops::Mul`, `std::ops::Div`, and `std::ops::Rem` traits can be implemented for custom types to enable arithmetic operations with borrowed data.
 164. Rust's `std::ops::TryFrom` and `std::ops::TryInto` traits can be implemented for custom types to enable fallible conversion between borrowed data and custom reference types.
 165. Rust's `std::ops::AsRef` and `std::ops::AsMut` traits can be implemented for custom types to enable conversion of custom reference types to borrowed data references.
 166. Rust's `std::ops` module contains traits, such as `Index` and `IndexMut`, that Rust's `std::str::Chars` type provides an iterator over grapheme clusters in a borrowed string slice, enabling Unicode text processing.
