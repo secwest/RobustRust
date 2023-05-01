@@ -1,7 +1,7 @@
 
 
 
-## Understanding the Rust Turbofish operator (::&lt;>) and Associated Types
+## Understanding the Rust Turbofish operator (::<>) and Associated Types
 
 The turbofish operator is used for specifying type parameters explicitly when type inference is insufficient. It can be confusing due to its unusual syntax.
 
