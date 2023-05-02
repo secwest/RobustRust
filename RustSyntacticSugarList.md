@@ -974,8 +974,7 @@ fn main() {
 ```
 
 
-
-1. `Raw Pointers: *const T and *mut T for raw (unsafe) pointers.`
+`Raw Pointers: *const T and *mut T for raw (unsafe) pointers.`
 
 
 ```
