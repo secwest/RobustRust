@@ -999,9 +999,18 @@ You can then call this function with different values of `T` and `N`. For exampl
 ```
 let a = [1, 3, 5, 7, 9];
 let b = [2, 4, 6, 8, 10];
-let
+let result = max::<i32, 5>(a, b);
+println!("{:?}", result); // prints [2, 4, 6, 8, 10]
 ```
 
+
+In this example, we are calling the `max` function with `i32` as the type parameter and `5` as the value of the const generic parameter `N`. We pass in two arrays `a` and `b` of length `5`, and the function returns an array of the maximum values of each corresponding element in `a` and `b`, which is `[2, 4, 6, 8, 10]`.
+
+The `if` and `else` keywords in the conditional expression are both marked with the `const` keyword, indicating that they are evaluated at compile-time. This allows the compiler to optimize the code and generate more efficient machine code.
+
+Note that in order to use conditional expressions with const generics, the condition must evaluate to a constant expression. In this example, `a[i] > b[i]` is a constant expression because `T` has a `PartialOrd` trait bound, which means that the comparison operator `>` is available for the type `T`.
+
+In summary, const generics in Rust allow you to define generic types and functions with a constant parameter that is specified at compile-time.  Const generics are useful for defining data structures and algorithms that operate on fixed-size arrays or other types that require a fixed-size parameter, and can result in more efficient machine code due to compile-time evaluation.
 
 
 
