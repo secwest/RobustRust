@@ -895,7 +895,7 @@ By using the turbofish operator, we explicitly specify the type of the data stru
 
 
 
-### Turbofish For Constants
+### Turbofish For Constants ::<{}>
 
 There is one more special case and notation in Rust (a phrase one should get used to) for the turbofish operator. And that has to do with constants encoded in curly braces. In Rust, you can use constants in turbofish specifications to provide values for const generics. The turbofish syntax is used to explicitly specify the type or value of a generic parameter in a function or struct.
 
@@ -909,7 +909,7 @@ fn repeat<T, const N: usize>(value: T) -> [T; N] {
 ```
 
 
-You can call this function and specify the value of `N` using the `::&lt;>` operator like this:
+You can call this function and specify the value of `N` using the `::<{}>` operator like this:
 
 
 ```
