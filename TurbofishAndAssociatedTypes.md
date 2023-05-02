@@ -1134,7 +1134,7 @@ Here, the value of `N` is inferred to be `1`, because we are passing a single va
 
 ### Real World Const Turbofish
 
-Here's an example from the Rust standard library that uses the curly brace notation inside the `::<{const}>` turbofish operator:
+Here's an example using the Rust standard library that uses the curly brace notation inside the `::<{const}>` turbofish operator:
 
 
 ```
