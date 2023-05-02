@@ -1022,7 +1022,7 @@ The `serde_json` crate is a specific implementation of `serde` for working with 
 
 In `serde_json`, the `Value` type is a dynamically-typed JSON value that can represent any valid JSON data. The `Value` type is implemented as an enum with variants for each JSON data type, such as strings, numbers, arrays, and objects.
 
-One of the enum variants is `Array(Vec&lt;Value>)`, which represents a JSON array. The `Vec` type is used to store the elements of the array, but since the length of the array is not known at compile time, `Vec` cannot be used directly as the type of the array.
+One of the enum variants is `Array(Vec<Value>)`, which represents a JSON array. The `Vec` type is used to store the elements of the array, but since the length of the array is not known at compile time, `Vec` cannot be used directly as the type of the array.
 
 Instead, `serde_json` uses const generic syntax to define a custom array type with a fixed size that can be used to represent JSON arrays. Here's an example of how this is done:
 
@@ -1050,7 +1050,7 @@ impl<const N: usize> Array<N> {
 
 In this example, `Array` is a custom array type with a const generic parameter `N` that specifies the length of the array. The const syntax is used in the `from_vec` method to specify the value of `N` when creating an instance of the `Array` type from a `Vec` of `Value` objects.
 
-The `from_vec` method takes a `Vec&lt;Value>` and returns a `Result&lt;Self, Vec&lt;Value>>`. If the length of the `Vec` is equal to `N`, the method creates a new `Array` with the values from the `Vec` and returns it wrapped in an `Ok` result. If the length of the `Vec` is not equal to `N`, the method returns the original `Vec` wrapped in an `Err` result.
+The `from_vec` method takes a `Vec<Value>` and returns a `Result<Self, Vec<Value>>`. If the length of the `Vec` is equal to `N`, the method creates a new `Array` with the values from the `Vec` and returns it wrapped in an `Ok` result. If the length of the `Vec` is not equal to `N`, the method returns the original `Vec` wrapped in an `Err` result.
 
 In theory, it is possible to overflow `serde_json` if the input JSON data contains more elements than the fixed buffer size used by the `Array` type. However, `serde_json` has safeguards in place to prevent this from happening in practice.
 
@@ -1163,9 +1163,9 @@ fn main() {
 
 In this example, the `write_bytes` method from the `mem` module is used to set all elements of an array to a specific value. The method takes three arguments: a raw pointer to the start of the array, the value to set all elements to, and the number of elements to set.
 
-The `write_bytes` method is generic over the size of the value being written, which is determined using the `size_of` function from the `mem` module. The size is specified using the `::&lt;{const}>` turbofish operator, where `{const}` is replaced with a constant expression that evaluates to the size of the value in bytes.
+The `write_bytes` method is generic over the size of the value being written, which is determined using the `size_of` function from the `mem` module. The size is specified using the `::<{const}>` turbofish operator, where `{const}` is replaced with a constant expression that evaluates to the size of the value in bytes.
 
-In the example, the size of the value being written is the size of an `i32`, which is 4 bytes. This value is computed using the `size_of` function and enclosed in curly braces to indicate that it is a constant expression. The `write_bytes` method is then called with this value as the type parameter using the `::&lt;{const}>` turbofish operator.
+In the example, the size of the value being written is the size of an `i32`, which is 4 bytes. This value is computed using the `size_of` function and enclosed in curly braces to indicate that it is a constant expression. The `write_bytes` method is then called with this value as the type parameter using the `::<{const}>` turbofish operator.
 
 This is an example of how the curly brace notation can be used inside the `::&lt;{const}>` turbofish operator to specify a constant expression for a generic parameter in a function call.
 
