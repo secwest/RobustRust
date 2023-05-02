@@ -2,7 +2,8 @@
 
 (Robust Rust)
 
-By Dragos Ruiu (2023 May 1) 
+By Dragos Ruiu 
+(2023 May 1) 
 
 1. Borrowing allows you to temporarily access an owned value without transferring ownership, maintaining memory safety.
 2. References represent borrowed access to a value and can be either mutable (`&mut T`) or immutable (`&T`).
