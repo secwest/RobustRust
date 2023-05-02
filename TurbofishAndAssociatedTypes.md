@@ -1167,7 +1167,7 @@ The `write_bytes` method is generic over the size of the value being written, wh
 
 In the example, the size of the value being written is the size of an `i32`, which is 4 bytes. This value is computed using the `size_of` function and enclosed in curly braces to indicate that it is a constant expression. The `write_bytes` method is then called with this value as the type parameter using the `::<{const}>` turbofish operator.
 
-This is an example of how the curly brace notation can be used inside the `::&lt;{const}>` turbofish operator to specify a constant expression for a generic parameter in a function call.
+This is an example of how the curly brace notation can be used inside the `::<{const}>` turbofish operator to specify a constant expression for a generic parameter in a function call.
 
 ### Turbofish Recap
 
