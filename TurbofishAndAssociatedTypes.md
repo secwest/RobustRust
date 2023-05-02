@@ -1095,4 +1095,6 @@ When working with associated types in Rust, it is common to encounter situations
 
 For example, consider a trait with an associated type `Output` and a generic function that returns the `Output` type. When calling this function, the compiler may not know which specific type to use for `Output`. By using the turbofish operator, the developer can explicitly specify the desired type, ensuring that the function operates correctly and adhering to the principle of strong static typing that Rust is built upon.
 
+The turbofish syntax can also be used to specify constant values for const generic parameters in functions or structs. The `::<{ value }>` notation allows you to explicitly provide the value of a const generic parameter, which is enclosed in curly braces to indicate that it is a constant expression. This notation can be used with simple values or with more complex expressions that evaluate to a constant value. Using the turbofish syntax with constants can make it easier to specify const generic parameters and can improve code readability, especially when the constant value is used in multiple places.
+
 The Rust turbofish operator is a powerful tool for working with generic functions and associated types, providing developers with a means to disambiguate type information and create more robust, maintainable code.
