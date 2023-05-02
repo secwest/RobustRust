@@ -1118,7 +1118,7 @@ impl<const N: usize> Array<N> {
 
 In this example, `Array` is a custom array type with a const generic parameter `N` that specifies the length of the array. The turbofish syntax is used in the `from_vec` method to specify the value of `N` when creating an instance of the `Array` type from a `Vec` of `Value` objects.
 
-The `from_vec` method takes a `Vec&lt;Value>` and returns a `Result&lt;Self, Vec&lt;Value>>`. If the length of the `Vec` is equal to `N`, the method creates a new `Array` with the values from the `Vec` and returns it wrapped in an `Ok` result. If the length of the `Vec` is not equal to `N`, the method returns the original `Vec` wrapped in an `Err` result.
+The `from_vec` method takes a `Vec<Value>` and returns a `Result<Self, Vec<Value>>`. If the length of the `Vec` is equal to `N`, the method creates a new `Array` with the values from the `Vec` and returns it wrapped in an `Ok` result. If the length of the `Vec` is not equal to `N`, the method returns the original `Vec` wrapped in an `Err` result.
 
 In theory, it is possible to overflow `serde_json` if the input JSON data contains more elements than the fixed buffer size used by the `Array` type. However, `serde_json` has safeguards in place to prevent this from happening in practice.
 
