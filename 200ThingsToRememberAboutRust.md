@@ -1,6 +1,7 @@
  200 Things Every Rust Programmer Should Remember
 
 (Robust Rust)
+
 By Dragos Ruiu (2023 May 1) 
 
 1. Borrowing allows you to temporarily access an owned value without transferring ownership, maintaining memory safety.
