@@ -1134,51 +1134,40 @@ Here, the value of `N` is inferred to be `1`, because we are passing a single va
 
 ### Real World Const Turbofish
 
-Let's take an example from the `chrono` crate, which is a popular Rust library for working with dates and times.
-
-In `chrono`, the `Duration` type represents a duration of time, and is implemented as a struct with two fields: `secs` and `nanos`. The `secs` field represents the number of seconds in the duration, and the `nanos` field represents the number of additional nanoseconds.
-
-Here's an example of how the `Duration` type is defined using const generics and the turbofish syntax:
+Here's an example from the Rust standard library that uses the curly brace notation inside the `::<{const}>` turbofish operator:
 
 
 ```
-pub struct Duration {
-    secs: i64,
-    nanos: i32,
-}
+use std::mem;
 
-impl Duration {
-    // ...
+fn main() {
+    // Create an array with a fixed size of 8 elements
+    let mut arr: [i32; 8] = [0; 8];
 
-    pub const fn zero() -> Duration {
-        Duration { secs: 0, nanos: 0 }
+    // Get a raw pointer to the start of the array
+    let ptr: *mut i32 = arr.as_mut_ptr();
+
+    // Use the `write_bytes` method from the `mem` module to set the
+    // entire array to a specific value
+    unsafe {
+        mem::write_bytes::<{mem::size_of::<i32>()}>(ptr, 42, arr.len());
     }
 
-    pub const fn from_std(std: std::time::Duration) -> Duration {
-        Duration {
-            secs: std.as_secs() as i64,
-            nanos: std.subsec_nanos() as i32,
-        }
-    }
-
-    pub const fn as_std(&self) -> std::time::Duration {
-        std::time::Duration::new(self.secs as u64, self.nanos as u32)
+    // Print the array to verify that all elements are set to 42
+    for i in 0..arr.len() {
+        println!("{}", arr[i]);
     }
 }
 ```
 
 
-In this example, the `Duration` struct has no type or lifetime parameters, but it uses const generics and the turbofish syntax in the `zero`, `from_std`, and `as_std` methods.
+In this example, the `write_bytes` method from the `mem` module is used to set all elements of an array to a specific value. The method takes three arguments: a raw pointer to the start of the array, the value to set all elements to, and the number of elements to set.
 
-The `zero` method returns a `Duration` instance with zero seconds and zero nanoseconds. The turbofish syntax is used to indicate that the method returns a `Duration` instance, even though no value is provided for the const generic parameter.
+The `write_bytes` method is generic over the size of the value being written, which is determined using the `size_of` function from the `mem` module. The size is specified using the `::&lt;{const}>` turbofish operator, where `{const}` is replaced with a constant expression that evaluates to the size of the value in bytes.
 
-The `from_std` method takes a `std::time::Duration` instance and returns a `Duration` instance with the same number of seconds and nanoseconds. The turbofish syntax is used to specify the value of the const generic parameter in the return type of the method.
+In the example, the size of the value being written is the size of an `i32`, which is 4 bytes. This value is computed using the `size_of` function and enclosed in curly braces to indicate that it is a constant expression. The `write_bytes` method is then called with this value as the type parameter using the `::&lt;{const}>` turbofish operator.
 
-The `as_std` method returns a `std::time::Duration` instance with the same number of seconds and nanoseconds as the `Duration` instance. The turbofish syntax is used to specify the value of the const generic parameter in the return type of the method.
-
-In all of these cases, the use of const generics and the turbofish syntax allows `chrono` to define methods that operate on `Duration` instances with a fixed size and type, even though the exact value of the duration may vary. This provides a safe and efficient way to work with durations of time in Rust.
-
-In summary, the `chrono` crate uses const generics and the turbofish syntax to define a fixed-size and fixed-type `Duration` struct that can be used to represent a duration of time. The use of const generics and the turbofish syntax allows the `chrono` crate to define methods that operate on `Duration` instances in a safe and efficient way.
+This is an example of how the curly brace notation can be used inside the `::&lt;{const}>` turbofish operator to specify a constant expression for a generic parameter in a function call.
 
 ### Turbofish Recap
 
