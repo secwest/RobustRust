@@ -1108,8 +1108,6 @@ fn main() {
 
 
 
-1. 
-
 Pin: `std::pin::Pin` for creating a pinned reference, which ensures the memory it points to will not be moved.
 
 
