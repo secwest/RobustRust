@@ -892,6 +892,188 @@ let users = serde_json::from_str::<HashMap<String, User>>(json).unwrap();
 By using the turbofish operator, we explicitly specify the type of the data structure we want to deserialize our JSON data into, allowing the compiler to understand our intent and ensuring the correct type is used.
 
 
+
+### Turbofish For Constants
+
+There is one more special case and notation in Rust (a phrase one should get used to) for the turbofish operator. And that has to do with constants encoded in curly braces. In Rust, you can use constants in turbofish specifications to provide values for const generics. The turbofish syntax is used to explicitly specify the type or value of a generic parameter in a function or struct.
+
+For example, suppose you have a generic function that takes a const generic parameter `N`:
+
+
+```
+fn repeat<T, const N: usize>(value: T) -> [T; N] {
+    [value; N]
+}
+```
+
+
+You can call this function and specify the value of `N` using the `::&lt;>` operator like this:
+
+
+```
+let arr = repeat::<i32, { 5 }>(42);
+```
+
+
+Here, we are calling the `repeat` function with `i32` as the type parameter and `5` as the value of the const generic parameter `N`.
+
+
+
+### What are Const Generics?
+
+Const generics are a feature in Rust that allow you to define generic types or functions that take a constant value as a parameter. The constant value is specified at compile time and cannot be changed at runtime. This makes const generics useful for defining data structures and algorithms that operate on fixed-size arrays or other types that require a fixed-size parameter.
+
+To define a generic type or function with a const generic parameter, you use the `const` keyword before the generic parameter name. For example, here's how you could define a generic struct with a const generic parameter that specifies the length of an array:
+
+
+```
+struct Array<T, const N: usize> {
+    data: [T; N],
+}
+```
+
+
+In this example, `T` is a generic type parameter, and `N` is a const generic parameter that specifies the length of the array.
+
+You can then create instances of this struct with different values of `T` and `N`. For example:
+
+
+```
+let array1: Array<i32, 5> = Array { data: [1, 2, 3, 4, 5] };
+let array2: Array<&str, 3> = Array { data: ["hello", "world", "!"] };
+```
+
+
+
+### Using Const Generics in Functions
+
+You can also use const generics in function signatures. For example, here's how you could define a function that takes a const generic parameter `N` and returns an array of that length filled with a given value:
+
+
+```
+fn create_array<T: Copy, const N: usize>(value: T) -> [T; N] {
+    [value; N]
+}
+```
+
+
+In this example, `T` is a generic type parameter, and `N` is a const generic parameter that specifies the length of the array. The function returns an array of length `N` filled with the value `value`.
+
+You can then call this function with different values of `T` and `N`. For example:
+
+
+```
+let array1: [i32; 5] = create_array(0);
+let array2: [&str; 3] = create_array("hello");
+```
+
+
+Note that the `Copy` trait bound is required for the type parameter `T` because the function needs to copy the value `value` into each element of the array.
+
+
+### Using Const Generics with Conditional Expressions
+
+You can also use const generics in conditional expressions using the `const if` and `const else` keywords. For example, here's how you could define a function that returns the maximum of two values using a const generic parameter:
+
+
+```
+fn max<T: PartialOrd, const N: usize>(a: [T; N], b: [T; N]) -> [T; N] {
+    let mut result = [a[0]; N];
+
+    for i in 0..N {
+        result[i] = if a[i] > b[i] { a[i] } else { b[i] };
+    }
+
+    result
+}
+```
+
+
+In this example, `T` is a generic type parameter, and `N` is a const generic parameter that specifies the length of the arrays. The function returns an array of length `N` containing the maximum value of each corresponding element in `a` and `b`.
+
+You can then call this function with different values of `T` and `N`. For example:
+
+
+```
+let a = [1, 3, 5, 7, 9];
+let b = [2, 4, 6, 8, 10];
+let
+```
+
+
+
+
+
+### Generic Constant Turbofish
+
+The `turbofish` operator `::<{ value }>()` is used to explicitly specify the value of a const generic parameter when calling a generic function. The `value` is an expression that evaluates to a constant value, and it must be enclosed in curly braces to indicate that it is a constant expression.
+
+In Rust, you can use constants in turbofish specifications to provide values for const generics. The turbofish syntax is used to explicitly specify the type or value of a generic parameter in a function or struct.
+
+Continuing with the example from above, let's say you have a generic function that takes a const generic parameter `N`:
+
+
+```
+fn repeat<T, const N: usize>(value: T) -> [T; N] {
+    [value; N]
+}
+```
+
+
+You can call this function and specify the value of `N` using the turbofish syntax like this:
+
+
+```
+let arr = repeat::<i32, 5>(42);
+```
+
+
+In this example, we are calling the `repeat` function with `i32` as the type parameter and `5` as the value of the const generic parameter `N`.
+
+Now, let's say you want to use a constant to specify the value of `N`. You can define a constant using the `const` keyword and assign it a value, like this:
+
+
+```
+const SIZE: usize = 5;
+```
+
+
+Then, you can use the constant in the turbofish specification like this:
+
+
+```
+let arr = repeat::<i32, SIZE>(42);
+```
+
+
+This will produce the same result as the previous example.
+
+Note that when using a constant in a turbofish specification, the constant must have a type that can be inferred by the compiler. For example, in the previous example, the constant `SIZE` has the type `usize`, which matches the type of the const generic parameter `N`.
+
+The `turbofish ::<> ` notation can be especially useful when you have a complex expression that evaluates to a constant value, because it allows you to specify the value directly in the function call instead of assigning it to a separate constant and then using that constant as the parameter.
+
+You can also use more complex expressions in turbofish specifications, as long as they evaluate to a constant value. For example:
+
+
+```
+const SIZE: usize = 2 + 3;
+let arr = repeat::<i32, SIZE>(42);
+```
+
+
+In this example, the constant `SIZE` is assigned the value `2 + 3`, which evaluates to `5`. The `repeat` function is then called with `i32` as the type parameter and `SIZE` as the value of the const generic parameter `N`.
+
+Note that the `::<>` notation is only necessary when the compiler cannot infer the value of the const generic parameter from the context. If the value of the const generic parameter can be inferred, you can omit the `::<> `notation and simply call the function like this:
+
+
+```
+let arr = repeat(42);
+```
+
+
+Here, the value of `N` is inferred to be `1`, because we are passing a single value to the function.
+
+
 ### Turbofish Recap
 
 The Rust turbofish operator is an essential tool for working with generic functions and associated types, as it helps explicitly specify type information that the compiler cannot infer.
