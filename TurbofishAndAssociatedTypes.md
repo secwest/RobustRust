@@ -1,6 +1,8 @@
 
 ## Understanding the Rust Turbofish operator (::<>) and Associated Types
 
+By Dragos Ruiu (2023 May 1)
+
 The turbofish operator is used for specifying type parameters explicitly when type inference is insufficient. It can be confusing due to its unusual syntax.
 
 The turbofish should be placed after the function or struct name, followed by the type parameters in angle brackets. For example:
