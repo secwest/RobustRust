@@ -551,7 +551,9 @@ Some common mistakes new Rust programmers might make when using the turbofish op
 
 Unnecessary use of turbofish: Sometimes, the Rust compiler can infer the correct types without the need for turbofish. New programmers might overuse it when it's not necessary, leading to more verbose code. In many cases, you can let the compiler infer the types, making the code cleaner and more concise. 
 
-When working with traits that have associated types, new Rust programmers might mistakenly use turbofish to specify the associated type. Instead, they should implement the trait for the specific type and use the associated type in the implementation. For example:
+When working with traits that have associated types, new Rust programmers might mistakenly use turbofish to specify the associated type. Instead, they should implement the trait for the specific type and use the associated type in the implementation. 
+
+An example example of when not to use turbofish:
 
 
 ```
