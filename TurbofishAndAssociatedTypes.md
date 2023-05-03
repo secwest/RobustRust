@@ -973,46 +973,6 @@ let array2: [&str; 3] = create_array("hello");
 Note that the `Copy` trait bound is required for the type parameter `T` because the function needs to copy the value `value` into each element of the array.
 
 
-### Using Const Generics with Conditional Expressions
-
-You can also use const generics in conditional expressions using the `const if` and `const else` keywords. For example, here's how you could define a function that returns the maximum of two values using a const generic parameter:
-
-
-```
-fn max<T: PartialOrd, const N: usize>(a: [T; N], b: [T; N]) -> [T; N] {
-    let mut result = [a[0]; N];
-
-    for i in 0..N {
-        result[i] = if a[i] > b[i] { a[i] } else { b[i] };
-    }
-
-    result
-}
-```
-
-
-In this example, `T` is a generic type parameter, and `N` is a const generic parameter that specifies the length of the arrays. The function returns an array of length `N` containing the maximum value of each corresponding element in `a` and `b`.
-
-You can then call this function with different values of `T` and `N`. For example:
-
-
-```
-let a = [1, 3, 5, 7, 9];
-let b = [2, 4, 6, 8, 10];
-let result = max::<i32, 5>(a, b);
-println!("{:?}", result); // prints [2, 4, 6, 8, 10]
-```
-
-
-In this example, we are calling the `max` function with `i32` as the type parameter and `5` as the value of the const generic parameter `N`. We pass in two arrays `a` and `b` of length `5`, and the function returns an array of the maximum values of each corresponding element in `a` and `b`, which is `[2, 4, 6, 8, 10]`.
-
-The `if` and `else` keywords in the conditional expression are both marked with the `const` keyword, indicating that they are evaluated at compile-time. This allows the compiler to optimize the code and generate more efficient machine code.
-
-Note that in order to use conditional expressions with const generics, the condition must evaluate to a constant expression. In this example, `a[i] > b[i]` is a constant expression because `T` has a `PartialOrd` trait bound, which means that the comparison operator `>` is available for the type `T`.
-
-In summary, const generics in Rust allow you to define generic types and functions with a constant parameter that is specified at compile-time.  Const generics are useful for defining data structures and algorithms that operate on fixed-size arrays or other types that require a fixed-size parameter, and can result in more efficient machine code due to compile-time evaluation.
-
-
 ### Generic Constant Turbofish
 
 The `turbofish` operator `::<{ value }>()` is used to explicitly specify the value of a const generic parameter when calling a generic function. The `value` is an expression that evaluates to a constant value, and it must be enclosed in curly braces to indicate that it is a constant expression.
