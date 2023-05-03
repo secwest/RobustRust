@@ -1012,56 +1012,6 @@ Note that in order to use conditional expressions with const generics, the condi
 
 In summary, const generics in Rust allow you to define generic types and functions with a constant parameter that is specified at compile-time.  Const generics are useful for defining data structures and algorithms that operate on fixed-size arrays or other types that require a fixed-size parameter, and can result in more efficient machine code due to compile-time evaluation.
 
-### Real World Const Generics
-
-Let's take an example from the `serde_json` crate, which is a popular Rust library for JSON serialization and deserialization.
-
-The `serde` crate is a general-purpose library for serialization and deserialization of Rust data structures. It provides a flexible and extensible framework for defining data formats and encoding/decoding rules using Rust traits and macros. With `serde`, you can serialize and deserialize Rust data structures to and from a variety of data formats, including JSON, XML, YAML, and others.
-
-The `serde_json` crate is a specific implementation of `serde` for working with JSON data. It provides a lightweight and fast JSON parser and serializer that is optimized for performance and simplicity. With `serde_json`, you can rapidly parse JSON data into Rust data structures and serialize Rust data structures into JSON data with low overhead.
-
-In `serde_json`, the `Value` type is a dynamically-typed JSON value that can represent any valid JSON data. The `Value` type is implemented as an enum with variants for each JSON data type, such as strings, numbers, arrays, and objects.
-
-One of the enum variants is `Array(Vec<Value>)`, which represents a JSON array. The `Vec` type is used to store the elements of the array, but since the length of the array is not known at compile time, `Vec` cannot be used directly as the type of the array.
-
-Instead, `serde_json` uses const generic syntax to define a custom array type with a fixed size that can be used to represent JSON arrays. Here's an example of how this is done:
-
-
-```
-pub struct Array<const N: usize>([Value; N]);
-
-impl<const N: usize> Array<N> {
-    pub fn from_vec(vec: Vec<Value>) -> Result<Self, Vec<Value>> {
-        if vec.len() == N {
-            let mut array = [Value::Null; N];
-            for (i, item) in vec.into_iter().enumerate() {
-                array[i] = item;
-            }
-            Ok(Self(array))
-        } else {
-            Err(vec)
-        }
-    }
-
-    // ...
-}
-```
-
-
-In this example, `Array` is a custom array type with a const generic parameter `N` that specifies the length of the array. The const syntax is used in the `from_vec` method to specify the value of `N` when creating an instance of the `Array` type from a `Vec` of `Value` objects.
-
-The `from_vec` method takes a `Vec<Value>` and returns a `Result<Self, Vec<Value>>`. If the length of the `Vec` is equal to `N`, the method creates a new `Array` with the values from the `Vec` and returns it wrapped in an `Ok` result. If the length of the `Vec` is not equal to `N`, the method returns the original `Vec` wrapped in an `Err` result.
-
-In theory, it is possible to overflow `serde_json` if the input JSON data contains more elements than the fixed buffer size used by the `Array` type. However, `serde_json` has safeguards in place to prevent this from happening in practice.
-
-For example, the `from_vec` method of the `Array` type checks if the length of the input `Vec` is equal to the fixed buffer size `N`. If the length of the `Vec` is greater than `N`, an error is returned and the `Vec` is not converted to an `Array`. This check ensures that the input data does not overflow the fixed buffer.
-
-In addition, `serde_json` provides other safety checks and error handling mechanisms to prevent buffer overflows and other security issues. For example, it validates the input JSON data to ensure that it is well-formed and does not contain any invalid or malicious data.
-
-It's worth noting that fixed buffer sizes are a trade-off between performance and safety. Using a fixed buffer size can make some operations faster and more efficient, but it also limits the amount of data that can be processed at once. In the case of `serde_json`, the fixed buffer size is a reasonable choice for representing JSON arrays, which are typically not very large in practice. However, for other use cases where larger amounts of data need to be processed, it may be necessary to use dynamic buffers or other data structures that can grow or shrink as needed.
-
-This is a real-world example of how const generics can be used to define custom array types with a fixed size, which is useful for representing JSON arrays in the `serde_json` library.
-
 
 ### Generic Constant Turbofish
 
