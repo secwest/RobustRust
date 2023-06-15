@@ -61,7 +61,6 @@ Here's a list of shorthand notations, shortcuts, and other syntactically unusual
 59. Repeat Expression: `[0; 5]` for creating an array with repeated values.
 60. String Literal Concatenation: `"Hello, " "world!"` for concatenating adjacent string literals.
 61. Unreachable Code: `unreachable!()` macro for marking a code location as unreachable.
-62. Underscore in Numeric Literals: `1_000_000` for improving readability in large numeric literals.
 63. Dereference Operator: `*x` for dereferencing a reference or pointer.
 64. Raw Identifier: `r#type` for using reserved keywords as identifiers.
 65. Loop Labels: `'label: loop { ... }` for labeling loops, and `break 'label;` or `continue 'label;` for breaking or continuing labeled loops.
@@ -92,7 +91,6 @@ Here's a list of shorthand notations, shortcuts, and other syntactically unusual
 9. Scoped attributes: `#[attr]` for applying an attribute to an item in a limited scope.
 10. Custom derive: `#[derive(MyTrait)]` for implementing custom derive macros that generate trait implementations.
 11. Nested imports: `use std::{fs, io};` for importing multiple items from the same path in a single `use` statement.
-12. Underscore in numeric literals: `1_000_000` for improving readability in numeric literals.
 13. Extern types: `extern type Foo;` for declaring an opaque type with an unknown size and alignment.
 14. Binding modes: `ref` and `ref mut` for binding to a reference or mutable reference in pattern matching.
 1. Try blocks: `try { ... }` for using the `?` operator within the block and propagating errors to the enclosing scope (experimental feature).
