@@ -30,60 +30,59 @@ Here's a list of shorthand notations, shortcuts, and other syntactically unusual
 20. Dereference Operator: `*` for accessing the value behind a reference.
 21. Ownership Transfer: `let x = y;` moves ownership of `y` to `x`.
 22. Borrowing: `&y` to create a shared reference without transferring ownership.
-1. Impl Trait: `fn return_iterator() -> impl Iterator&lt;Item = i32>` for returning an anonymous type that implements a specific trait.
-2. Extern Crate: `extern crate my_crate;` for including external crates in Rust 2015 edition (not required in Rust 2018 edition and later).
-3. Macro Invocation: `println!("Hello, world!");` invoking a macro with a `!` at the end.
-4. Attribute Macros: `#[derive(Debug)]` for automatically implementing traits or other code-generation tasks.
-5. Module Declaration: `mod my_module;` for declaring a module in a separate file.
-6. Nested Module Declaration: `mod inner { ... }` for declaring a nested module within the same file.
-7. Visibility Modifiers: `pub` keyword for making items public, and `pub(crate)` for making items visible only within the current crate.
-8. Struct Update Syntax: `Point { x: 3, ..point }` for creating a new struct instance while reusing the values from an existing instance.
-9. Or Patterns: `Some(0) | Some(1)` in pattern matching to match against multiple patterns.
-10. If Let: `if let Some(x) = option { ... }` for concise single pattern matching.
-11. While Let: `while let Some(x) = iterator.next() { ... }` for loop iteration with single pattern matching.
-12. Function Pointer: `fn add(x: i32, y: i32) -> i32;` for specifying a function as a value.
-13. AsRef and AsMut: `as_ref()` and `as_mut()` for converting a value into a reference or mutable reference of a different type.
-14. Try Blocks: `try { ... }` for a block returning a `Result`, available in nightly Rust builds.
-15. Associated Types: `type Output;` within a trait, for specifying a type that is associated with the implementing type.
-16. Default Trait Implementations: `fn method(&self) -> Type { ... }` within a trait, for providing default implementations that can be overridden by implementers.
-17. Trait Bounds: `T: Trait` in generic function signatures, for constraining the generic types to implement specific traits.
-18. Higher-Ranked Trait Bounds: `for&lt;'a> T: Trait&lt;'a>` for constraining a generic type to implement a trait with an associated lifetime.
-19. Lifetime Annotations: `'a` for explicitly specifying lifetimes of references in structs, functions, and traits.
-20. Static Lifetimes: `'static` for references with the longest possible lifetime, living for the entire duration of the program.
-1. Range Syntax: `a..b` for creating a range of values between `a` and `b`.
-2. Inclusive Range Syntax: `a..=b` for creating an inclusive range, including both `a` and `b`.
-3. Array and Slice Pattern: `[a, b, .., y, z]` for destructuring arrays or slices.
-4. Field Init Shorthand: `Foo { a, b }` for initializing a struct's fields with the same name as the variables.
-5. C-style Enum: `enum Enum { A, B, C }` for declaring a C-style enumeration.
-6. Use Renaming: `use std::io::Result as IoResult;` for renaming an imported item.
-7. Type Alias: `type MyResult&lt;T> = Result&lt;T, MyError>;` for creating an alias for a type.
-8. Raw Pointers: `*const T` and `*mut T` for raw (unsafe) pointers.
-9. Repeat Expression: `[0; 5]` for creating an array with repeated values.
-10. String Literal Concatenation: `"Hello, " "world!"` for concatenating adjacent string literals.
-11. Unreachable Code: `unreachable!()` macro for marking a code location as unreachable.
-12. Underscore in Numeric Literals: `1_000_000` for improving readability in large numeric literals.
-13. Dereference Operator: `*x` for dereferencing a reference or pointer.
-14. Raw Identifier: `r#type` for using reserved keywords as identifiers.
-15. Loop Labels: `'label: loop { ... }` for labeling loops, and `break 'label;` or `continue 'label;` for breaking or continuing labeled loops.
-16. Async Functions: `async fn foo() -> Result&lt;(), ()> { ... }` for declaring asynchronous functions.
-17. Pin: `std::pin::Pin` for creating a pinned reference, which ensures the memory it points to will not be moved.
-18. Unsized Types: `T: ?Sized` trait bound for allowing generic types to be unsized.
-1. Zero-sized types: `struct Zst;` for declaring a zero-sized type (ZST) that occupies no memory.
-2. Constant Function: `const fn foo() { ... }` for declaring a function that can be evaluated at compile-time.
-3. Associated Constants: `const VALUE: i32 = 42;` for defining associated constants within trait or struct implementations.
-4. Or-patterns: `Some(0) | Some(1) | Some(2)` for matching multiple patterns in a single arm.
-5. Anonymous Lifetime: `'_` for specifying an anonymous lifetime parameter.
-6. Boxed trait objects: `Box&lt;dyn Trait>` for creating a boxed trait object, which can hold any type that implements the trait.
-7. Dereference coercion: Automatically dereferencing a reference to a reference, e.g., `&String` to `&str`.
-8. Diverging type: `!` for specifying a diverging type, which indicates that the function does not return.
-9. Module shorthand: `mod.rs` for defining a module in a separate file.
-10. Eager macro expansion: `macro_rules! foo { ... }` for defining macros that are eagerly expanded during parsing.
-11. Lazy macro expansion: `proc_macro! { ... }` for defining procedural macros that are expanded during code generation.
-12. Type ascription: `let x: Type = expr;` for annotating the type of a variable explicitly.
-13. Extern crate: `extern crate foo;` for explicitly linking an external crate.
-14. NLL (Non-Lexical Lifetimes): More precise lifetime analysis, reducing restrictions on borrowing.
-1. Field init shorthand: When initializing a struct, if a variable with the same name as a field is in scope, you can use the shorthand `fieldname` instead of `fieldname: fieldname`.
-2. Inclusive Ranges: `1..=3` for creating an inclusive range that includes the end value.
+31. Impl Trait: `fn return_iterator() -> impl Iterator&lt;Item = i32>` for returning an anonymous type that implements a specific trait.
+32. Extern Crate: `extern crate my_crate;` for including external crates in Rust 2015 edition (not required in Rust 2018 edition and later).
+33. Macro Invocation: `println!("Hello, world!");` invoking a macro with a `!` at the end.
+34. Attribute Macros: `#[derive(Debug)]` for automatically implementing traits or other code-generation tasks.
+35. Module Declaration: `mod my_module;` for declaring a module in a separate file.
+36. Nested Module Declaration: `mod inner { ... }` for declaring a nested module within the same file.
+37. Visibility Modifiers: `pub` keyword for making items public, and `pub(crate)` for making items visible only within the current crate.
+38. Struct Update Syntax: `Point { x: 3, ..point }` for creating a new struct instance while reusing the values from an existing instance.
+39. Or Patterns: `Some(0) | Some(1)` in pattern matching to match against multiple patterns.
+40. If Let: `if let Some(x) = option { ... }` for concise single pattern matching.
+41. While Let: `while let Some(x) = iterator.next() { ... }` for loop iteration with single pattern matching.
+42. Function Pointer: `fn add(x: i32, y: i32) -> i32;` for specifying a function as a value.
+43. AsRef and AsMut: `as_ref()` and `as_mut()` for converting a value into a reference or mutable reference of a different type.
+44. Try Blocks: `try { ... }` for a block returning a `Result`, available in nightly Rust builds.
+45. Associated Types: `type Output;` within a trait, for specifying a type that is associated with the implementing type.
+46. Default Trait Implementations: `fn method(&self) -> Type { ... }` within a trait, for providing default implementations that can be overridden by implementers.
+47. Trait Bounds: `T: Trait` in generic function signatures, for constraining the generic types to implement specific traits.
+48. Higher-Ranked Trait Bounds: `for&lt;'a> T: Trait&lt;'a>` for constraining a generic type to implement a trait with an associated lifetime.
+49. Lifetime Annotations: `'a` for explicitly specifying lifetimes of references in structs, functions, and traits.
+50. Static Lifetimes: `'static` for references with the longest possible lifetime, living for the entire duration of the program.
+51. Range Syntax: `a..b` for creating a range of values between `a` and `b`.
+52. Inclusive Range Syntax: `a..=b` for creating an inclusive range, including both `a` and `b`.
+53. Array and Slice Pattern: `[a, b, .., y, z]` for destructuring arrays or slices.
+54. Field Init Shorthand: `Foo { a, b }` for initializing a struct's fields with the same name as the variables.
+55. C-style Enum: `enum Enum { A, B, C }` for declaring a C-style enumeration.
+56. Use Renaming: `use std::io::Result as IoResult;` for renaming an imported item.
+57. Type Alias: `type MyResult&lt;T> = Result&lt;T, MyError>;` for creating an alias for a type.
+58. Raw Pointers: `*const T` and `*mut T` for raw (unsafe) pointers.
+59. Repeat Expression: `[0; 5]` for creating an array with repeated values.
+60. String Literal Concatenation: `"Hello, " "world!"` for concatenating adjacent string literals.
+61. Unreachable Code: `unreachable!()` macro for marking a code location as unreachable.
+62. Underscore in Numeric Literals: `1_000_000` for improving readability in large numeric literals.
+63. Dereference Operator: `*x` for dereferencing a reference or pointer.
+64. Raw Identifier: `r#type` for using reserved keywords as identifiers.
+65. Loop Labels: `'label: loop { ... }` for labeling loops, and `break 'label;` or `continue 'label;` for breaking or continuing labeled loops.
+66. Async Functions: `async fn foo() -> Result&lt;(), ()> { ... }` for declaring asynchronous functions.
+67. Pin: `std::pin::Pin` for creating a pinned reference, which ensures the memory it points to will not be moved.
+68. Unsized Types: `T: ?Sized` trait bound for allowing generic types to be unsized.
+69. Zero-sized types: `struct Zst;` for declaring a zero-sized type (ZST) that occupies no memory.
+70. Constant Function: `const fn foo() { ... }` for declaring a function that can be evaluated at compile-time.
+71. Associated Constants: `const VALUE: i32 = 42;` for defining associated constants within trait or struct implementations.
+72. Or-patterns: `Some(0) | Some(1) | Some(2)` for matching multiple patterns in a single arm.
+73. Anonymous Lifetime: `'_` for specifying an anonymous lifetime parameter.
+74. Boxed trait objects: `Box&lt;dyn Trait>` for creating a boxed trait object, which can hold any type that implements the trait.
+75. Dereference coercion: Automatically dereferencing a reference to a reference, e.g., `&String` to `&str`.
+76. Diverging type: `!` for specifying a diverging type, which indicates that the function does not return.
+77. Module shorthand: `mod.rs` for defining a module in a separate file.
+78. Eager macro expansion: `macro_rules! foo { ... }` for defining macros that are eagerly expanded during parsing.
+79. Lazy macro expansion: `proc_macro! { ... }` for defining procedural macros that are expanded during code generation.
+80. Type ascription: `let x: Type = expr;` for annotating the type of a variable explicitly.
+81. Extern crate: `extern crate foo;` for explicitly linking an external crate.
+82. NLL (Non-Lexical Lifetimes): More precise lifetime analysis, reducing restrictions on borrowing.
+83. Field init shorthand: When initializing a struct, if a variable with the same name as a field is in scope, you can use the shorthand `fieldname` instead of `fieldname: fieldname`.
 3. Byte string literals: `b"Hello, world!"` for creating a byte string literal (an array of `u8` values).
 4. Raw string literals: `r#"..."#` for creating a raw string literal, which does not process escape characters.
 5. Doc comments: `///` and `//!` for creating documentation comments that are processed by the Rust documentation tool (rustdoc).
