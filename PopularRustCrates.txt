@@ -131,7 +131,6 @@ prettytable-rs: Prettytable-rs is a library to print aligned and formatted table
 proc-macro-hack: Proc-macro-hack is a library that enables the use of function-like procedural macros in item and statement positions (as of Rust 1.30).
 prost: Prost is a protocol buffers implementation in Rust. Protocol Buffers (a.k.a., protobuf) are Google's language-neutral, platform-neutral, extensible mechanism for serializing structured data.
 pulldown-cmark: Pulldown-cmark is a Rust library for parsing CommonMark, a fully specified variant of Markdown.
-quickcheck: Quickcheck is a Rust library that allows you to test properties of your code rather than specific examples. It's inspired by the QuickCheck library for Haskell.
 quickcheck: Quickcheck is a way to run random tests on your code, inspired by the QuickCheck library for Haskell. It allows you to specify properties that your code should have, and then generates test cases to try and refute those properties.
 quick-error: Quick-error is a library for easily creating custom error types, greatly simplifying error handling.
 quote: Quote is a library for safely including literal Rust syntax into token streams. It's typically used for code generation.
