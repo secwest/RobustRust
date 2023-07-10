@@ -54,8 +54,8 @@ fern: Fern is a simple, efficient, and flexible logging library that provides a 
 flame: Flame is a simple hot code profiler for Rust. It's used for finding performance bottlenecks in Rust code.
 flate2: Flate2 is a crate providing bindings for zlib, miniz, or the Rust-flate library, which offers compression and decompression routines for deflate, gzip, and zlib formats.
 fnv: Fnv is a Rust library that provides Fowler/Noll/Vo hash (FNV hash), a simple hash function that is fast for short keys and has decent dispersion properties.
-futures_cpupool: Futures_cpupool is a library that creates a thread pool for executing CPU-bound tasks in Rust futures. It's useful for executing futures that are both I/O and CPU-bound.
 futures: Futures is a library providing the foundations for asynchronous programming in Rust. It includes key trait definitions like Stream, Future, and IntoFuture. It provides tools to work with futures and streams, which are abstractions over asynchronous computations.
+futures_cpupool: Futures_cpupool is a library that creates a thread pool for executing CPU-bound tasks in Rust futures. It's useful for executing futures that are both I/O and CPU-bound.
 futures-timer: Futures-timer provides futures-based timers. It's useful when you want to use timers with futures and tokio runtime.
 futures-util: Futures-util contains the utility types and functions for the futures-rs library, such as combinators.
 getopts: Getopts is a command-line option parsing library, enabling you to extract options and their arguments from a list of strings.
