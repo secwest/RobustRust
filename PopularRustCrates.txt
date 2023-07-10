@@ -111,7 +111,6 @@ miniz_oxide: Miniz_oxide is a Rust rewrite of the miniz DEFLATE/zlib encoder/dec
 mio: Mio is a lightweight, low-level I/O library for Rust focusing on non-blocking APIs and event notification for building high performance I/O apps with as little overhead as possible over the OS.
 mockito: Mockito is a library for creating HTTP mocks for use in testing.
 nalgebra: Nalgebra is a linear algebra library for Rust, which supports mathematical operations on vectors, matrices, and quaternions featuring various matrix and vector types, including both statically and dynamically sized ones.
-nalgebra: Nalgebra is a linear algebra library written in Rust,
 native-tls: Native-tls is a crate providing a binding to the platform's native TLS stack, allowing for TLS connectivity in a platform-agnostic way.
 nix: Nix is a library for providing a friendly API to Unix system services (like sockets or process management) that are not covered by the Rust standard library. It provides a friendly, type-safe interface to system calls and other OS functionality that is easy to use and efficient.
 nom: Nom is a parser combinator library with a focus on safe parsing, streaming patterns, and as much as possible zero-copy. It's particularly useful for tasks such as parsing binary formats or text-based formats with complex rules.
