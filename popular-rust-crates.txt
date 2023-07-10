@@ -1,0 +1,225 @@
+Some (220) popular and commonly used Crates from among the 120,000+ Rust crates....
+
+By Dragos Ruiu Jul 06 2023 for Robust Rust
+
+actix: Actix is a Rust actor system and web framework that's extremely fast. It's a simple and efficient framework for building concurrent applications in Rust.
+actix-rt: Actix-rt is a runtime system for Actix actors. This library provides everything required to run an Actix application including the system executor, timing facilities, and an I/O reactor.
+actix-service: Actix-service provides an abstraction for composable asynchronous services. It's designed to be used with Actix but can be used independently as well.
+actix-web: Actix-web is a powerful, pragmatic, and extremely fast web framework for Rust, built on the actix actor framework.
+ahash: AHash is a high-speed keyed hashing algorithm intended for use in in-memory hashmaps.
+aho-corasick: Aho-Corasick is a fast library for searching multiple patterns at once, with support for regular expressions, with SIMD acceleration in some cases.
+amethyst: Amethyst is a game engine aiming to be fast and as configurable as possible. Its design is based on the Entity Component System (ECS) pattern for high performance and parallelizable code.
+ansi_term: Ansi_term is a library for controlling colors and formatting, such as red bold text or blue underlined text, on ANSI terminals.
+anyhow: Anyhow is a crate for flexible error handling in Rust. It provides an easy way to create, manage, and return errors and is often used in applications and libraries that don't need to define their own error types. It provides the anyhow::Error type for easy error wrapping and propagation.
+approx: Approx is a library for approximate comparison of floating point types. It provides macros for comparing floating point numbers with a specified tolerance.
+async-std: Async-std is a library that provides asynchronous counterparts to standard library types. It provides async versions of key std types like async-std::task for spawning tasks, or async-std::fs::File for file I/O, making async programming more ergonomic.
+async-trait: Async-trait is a library for making async trait methods easier. It transforms async functions to return boxed dyn Futures.  It provides a way around the restriction of async functions not being allowed in traits by automatically boxing the futures that async functions return.
+backtrace: Backtrace is a library in Rust for collecting backtraces programmatically, useful for logging and error reporting.
+base64: Base64 crate is a set of routines that encode and decode base64 data. Base64 encoding is commonly used when there is a need to encode binary data, especially when that data needs to be stored or transferred over media designed to handle text.
+bevy: Bevy is a refreshingly simple data-driven game engine and app framework built in Rust.
+bincode: Bincode is a crate for encoding and decoding using a tiny binary serialization strategy. Using it, one can create and handle binary protocols and file formats, and you can easily go from having an object in memory, quickly serialize it to bytes, and then deserialize it back just as fast!
+brotli: Brotli is a lossless compression algorithm and format that provides better compression ratios than Gzip and Deflate. The brotli crate provides bindings and wrappers for this algorithm.
+bytemuck: Bytemuck is a crate for safe transmutes and data structure reinterpretation.
+byteorder: Byteorder is a utility that provides Read and Write traits with methods to read from and write to byte slices in either big-endian or little-endian order.
+bytes: Bytes is a utility library that provides efficient byte buffer structures, which are commonly used in asynchronous I/O operations, especially in network programming.
+byte-unit: Byte-unit is a library to represent sizes in different byte units like bytes, kilobytes, megabytes, and so on.
+capnp: Capnp provides Rust language bindings for the Cap'n Proto data interchange format, which is a type system for distributed systems.
+cargo: Cargo is the Rust package manager which downloads your Rust package's dependencies, compiles your packages, makes distributable packages, and uploads them to crates.io.
+cargo-edit: Cargo-edit adds subcommands to Cargo (the Rust package manager) for modifying Cargo.toml files from the command line. It's useful for adding, removing, and upgrading dependencies with ease.
+cc: The cc crate is a build-time dependency for Cargo build scripts to compile C/C++ code into a static archive to link against a Rust library. It makes integrating C/C++ code with your Rust project simpler.
+chrono: Chrono is a date and time library for Rust. It provides a simple and easy-to-use API for handling time, including parsing and formatting time strings.
+clap: Clap is a command line argument parser. It's full-featured, easy to use, and can automatically generate help and usage messages for your command line applications.
+clap-derive: Clap-derive provides custom derive for clap, making it even easier to parse command-line arguments by defining a struct that matches the desired command-line arguments.
+clippy: Clippy is a collection of lints to catch common mistakes and improve your Rust code. It provides suggestions and automatic fixes for many common Rust coding errors and inefficiencies.
+colored: Colored is a simple library to color terminal text output. It comes with multiple features including styling, disabling color output, and Windows 10 support.
+cookie: Cookie provides types for working with HTTP cookies. It supports parsing and serialization, and also provides a signed and private (encrypted, authenticated) cookie jars.
+crossbeam: Crossbeam is a crate providing tools for concurrent and parallel programming. It includes structures like channels, queues, and deques, as well as utilities for spawning and synchronizing tasks.
+crossterm: Crossterm is a library that allows you to build rich terminal and console user interfaces and handle input events on all major platforms.
+csv: Csv is a fast and flexible CSV reader and writer, supporting Serde, various delimiters, quoting rules, and headers.
+derive_more: Derive_more provides various derive macros to simplify your Rust structs and enums, including conversions to/from other standard types.
+diesel: Diesel is an ORM (Object-Relational Mapping) and query builder for Rust. It's designed to reduce the boilerplate for database interactions and improve runtime safety. It uses a pure-Rust frontend around a raw SQL/query builder backend.
+diesel-derive-enum: This crate works with Diesel to add simple enum support to your database, which is useful when you want more type safety than string-based representations offer.
+diesel_migrations: Diesel_migrations helps you deal with database schema migrations in a safe way, leveraging Diesel's type safety to avoid runtime errors due to schema mismatches.
+dirs: Dirs is a library to find various standard directories on the system, such as the home directory, cache directory, or configuration directory.
+dirs-next: Dirs-next is a successor to the dirs and dirs-sys libraries and provides functions to find standard directories on the system.
+dotenv: Dotenv is a crate that loads environment variables from a .env file, if it is available. This is useful in scenarios where you need to inject configuration into your application at runtime.
+druid: Druid is a data-first Rust-native UI design toolkit. It's aimed at providing high-quality, polished, platform-native user interfaces.
+elasticlunr-rs: Elasticlunr-rs is a lightweight full-text search engine in Rust for use in Javascript and WebAssembly.
+env_logger: Env_logger is a logger configured via an environment variable. It's particularly useful for adding logging to applications and libraries. It's one of the most common ways to add logging to a Rust application.
+evmap: Evmap provides an eventually consistent, concurrent, lock-free hash map implementation in Rust.
+exonum: Exonum is a extensible open-source framework for creating blockchain applications.
+failure: Failure is a system for managing and producing errors in Rust. It's designed to make it easier to manage errors in your Rust code.
+fern: Fern is a simple, efficient, and flexible logging library that provides a way to emit logs from Rust programs and control where they go and what they look like.
+flame: Flame is a simple hot code profiler for Rust. It's used for finding performance bottlenecks in Rust code.
+flate2: Flate2 is a crate providing bindings for zlib, miniz, or the Rust-flate library, which offers compression and decompression routines for deflate, gzip, and zlib formats.
+fnv: Fnv is a Rust library that provides Fowler/Noll/Vo hash (FNV hash), a simple hash function that is fast for short keys and has decent dispersion properties.
+futures_cpupool: Futures_cpupool is a library that creates a thread pool for executing CPU-bound tasks in Rust futures. It's useful for executing futures that are both I/O and CPU-bound.
+futures: Futures is a library providing the foundations for asynchronous programming in Rust. It includes key trait definitions like Stream, Future, and IntoFuture. It provides tools to work with futures and streams, which are abstractions over asynchronous computations.
+futures-timer: Futures-timer provides futures-based timers. It's useful when you want to use timers with futures and tokio runtime.
+futures-util: Futures-util contains the utility types and functions for the futures-rs library, such as combinators.
+getopts: Getopts is a command-line option parsing library, enabling you to extract options and their arguments from a list of strings.
+gfx: Gfx is a high-performance, bindless graphics API for the Rust programming language. It aims to be the default API for Rust game/platform-agnostic graphics.
+ggez: Ggez is a Rust library to create a Good Game Easily. It's a simple 2D game framework inspired by Love2D.
+gif: Gif provides support for encoding and decoding GIF images and animations in Rust.
+glium: Glium is an alternative to raw OpenGL that aims to provide an API that is efficient, safe, and easy to use.
+glob: Glob is a library for finding files using Unix shell style pattern matching. It's useful for operations that involve file systems and searching files.
+globset: Globset allows you to compile multiple globs into a single GlobSet that you can match against a path.
+glue: Glue is an async runtime for Rust with a focus on speed, correctness, and ergonomic design.
+glutin: Glutin is a cross-platform library for handling OpenGL context creation, event handling, and window manipulation.
+goblin: Goblin is a cross-platform, zero-copy, and macro-free binary parsing crate. It supports parsing ELF, Mach-O, and PE binaries with a unified interface.
+h2: H2 is a pure-Rust implementation of the HTTP/2.0 protocol. It provides a high-level API for managing HTTP/2.0 connections, streams, and frames.
+half: Half provides half-precision floating point types in Rust including f16 and bf16 for computation and machine learning uses.
+handlebars-rust: Handlebars-rust is a Rust templating library based on the Handlebars language, which is a superset of Mustache. It's useful for web development and generating code.
+hashbrown: Hashbrown provides a Rust-native implementation of a hash table, based on the Google SwissTable design.
+heck: Heck provides a library for converting names between different casing conventions like CamelCase, snake_case, kebab-case, and SHOUTY_SNAKE_CASE.
+hex: Hex is a simple library that provides functions for encoding and decoding data into and from hexadecimal.
+html5ever: Html5ever is a high-quality HTML5 parser that can be used standalone or as part of Servo, the parallel browser engine project.
+http: The http crate provides types for working with HTTP. It provides type safety over raw strings for many concepts used in HTTP.
+humansize: Humansize provides functionality to convert filesize units into human-readable strings.
+hyper: Hyper is a fast and correct HTTP/1.1 and HTTP/2 implementation written in and for Rust. Hyper provides both a Client and a Server. It's based on Tokio and is often used when you need fine-grained control over HTTP requests and responses.
+hyper-native-tls: Hyper-native-tls is a native TLS connector for the hyper library, an HTTP library in Rust.
+hyper-tls: Hyper-tls provides SSL/TLS support for the Hyper library via the native-tls crate. It enables HTTPS support in Hyper, a popular HTTP library for Rust.
+image: Image is a library that provides basic imaging processing functions and allows you to manipulate images in a variety of formats, including loading, saving, transforming, and drawing images.
+imageproc: Imageproc is a library for image processing. It's built on top of the image crate and provides various algorithms and operations you can apply to images.
+im: Im is a library that provides immutable data structures for Rust.
+indexmap: Indexmap is a hash table where the iteration order of the keys is independent of the hash values of the keys.
+indicatif: Indicatif is a library for creating progress bars and spinners in command-line interfaces. It helps make long-running command-line applications more informative and visually appealing.
+indoc: Indoc is a Rust library that provides a macro to produce indented strings, which is useful when working with multi-line string literals.
+input_buffer: Input_buffer provides a simple and efficient way to manage user input in console applications.
+instant: Instant is a library to get the current time in a platform-independent way. It helps in measuring time elapsed.
+iron: Iron is a high level web framework built in and for Rust, built on hyper for HTTP handling, inspired by Rack and Express.js.
+itertools: Itertools is a library for more iterator functionality. It adds extra functionality to Rust's iterators, including new adaptors, methods, and macros.
+jpeg-decoder: Jpeg-decoder is a library for decoding JPEG images into a pixel buffer.
+jsonwebtoken: Jsonwebtoken provides JSON Web Token support (JWT). It can be used to encode, decode, sign and verify JWT tokens.
+juniper: Juniper is a Rust library for building GraphQL servers that are type-safe and fast. It makes it easy to write GraphQL servers in Rust and provides a solid foundation for building complex APIs.
+jwalk: Jwalk is a library for a fast, parallel directory walking. It's especially suited for use cases that need to process a large number of files.
+kube: Kube is a Kubernetes client for Rust. It enables Rust applications to interact with Kubernetes clusters.
+kuchiki: Kuchiki is an HTML/XML tree manipulation library inspired by the JavaScript library jQuery.
+lalrpop: Lalrpop is a Rust library for building LR(1) parsers. It's useful for writing compilers, interpreters, or any tooling where you need to parse a custom language or file format. Its main advantage is its excellent error reporting.
+lapin: Lapin is an AMQP (Advanced Message Queuing Protocol) client library, allowing asynchronous communication between services.
+lasso: Lasso provides string interning, which is a method of storing only one copy of each distinct string value, which must be immutable.
+lazy_static: Lazy_static allows you to create statics that require one-time, potentially expensive, computations. Useful for initializing complex objects. Using this library, you can have statics that require code to be run at runtime in order to be initialized.
+libc: Libc provides all of the definitions necessary to easily interoperate with C code (or "C-like" code), in a platform-agnostic way. It includes types and function headers from the C standard library.
+log: Log is a flexible logging library for Rust. It provides a standard logging API that other libraries can use to implement logging, and applications can then choose how they want to display or handle logs.
+maplit: Maplit provides a set of macros for easily creating collections with literal syntax, such as hashmap!
+maud: Maud is a fast, safe, and easy-to-use template engine for Rust that allows you to write HTML templates in pure Rust, using compile-time generation to keep your runtime overhead low.
+md-5: MD-5 is an implementation of the MD5 hash function. It's a widely used cryptographic hash function that produces a 128-bit (16-byte) hash value.
+mdbook: Mdbook is a utility to create modern online books from Markdown files, similar to Gitbook but implemented in Rust.
+mime: Mime is a library for handling MIME types. It's necessary when handling HTTP to describe the type of the content.
+miniz_oxide: Miniz_oxide is a Rust rewrite of the miniz DEFLATE/zlib encoder/decoder.
+mio: Mio is a lightweight, low-level I/O library for Rust focusing on non-blocking APIs and event notification for building high performance I/O apps with as little overhead as possible over the OS.
+mockito: Mockito is a library for creating HTTP mocks for use in testing.
+nalgebra: Nalgebra is a linear algebra library for Rust, which supports mathematical operations on vectors, matrices, and quaternions featuring various matrix and vector types, including both statically and dynamically sized ones.
+nalgebra: Nalgebra is a linear algebra library written in Rust,
+native-tls: Native-tls is a crate providing a binding to the platform's native TLS stack, allowing for TLS connectivity in a platform-agnostic way.
+nix: Nix is a library for providing a friendly API to Unix system services (like sockets or process management) that are not covered by the Rust standard library. It provides a friendly, type-safe interface to system calls and other OS functionality that is easy to use and efficient.
+nom: Nom is a parser combinator library with a focus on safe parsing, streaming patterns, and as much as possible zero-copy. It's particularly useful for tasks such as parsing binary formats or text-based formats with complex rules.
+num_cpus: Num_cpus is a utility that determines the number of CPUs available on the current system.
+num-iter: Num-iter is a library that provides functions for producing an iterator over the range of a numeric primitive type.
+num: Num is a collection of numeric types and traits for Rust, including complex numbers, rationals, range iterators, generic integers, and random numbers.
+num-traits: Num-traits provides numeric traits for generic mathematics in Rust, which is useful when writing algorithms that can work with any kind of numbers.
+once_cell: Once_cell provides two new cell-like types, OnceCell and Lazy, that can store arbitrary non-Copy types and are initialized exactly once.
+openssl: Openssl provides bindings to the OpenSSL library for handling SSL and TLS network protocols, and for cryptography.
+parity-scale-codec: Parity-scale-codec provides a codec for encoding and decoding data in the SCALE (Simple Concatenated Aggregate Little-Endian) data format.
+parking_lot: Parking_lot offers faster and more flexible lock types, such as mutexes and read-write locks, improving over the standard library's synchronization primitives.
+parquet: Parquet is a columnar storage file format optimized for use with big data processing frameworks. The parquet crate provides read-write support for the Parquet format in Rust.
+percent-encoding: Percent-encoding provides functions to percent-encode and -decode strings according to RFC 3986, which is used for URL encoding and decoding.
+pest: Pest is a general purpose parser written in Rust with a focus on accessibility, correctness, and performance. It uses parsing expression grammars (or PEG) as input.
+phf: Phf provides compile-time–created maps and sets, similar to Python's frozenset.
+piston: Piston is a user-friendly game engine written in Rust, designed to make 2D game development easier and more modular.
+prettytable-rs: Prettytable-rs is a library to print aligned and formatted tables. It's highly customizable and allows to individually format cells, rows, columns or the entire table.
+proc-macro-hack: Proc-macro-hack is a library that enables the use of function-like procedural macros in item and statement positions (as of Rust 1.30).
+prost: Prost is a protocol buffers implementation in Rust. Protocol Buffers (a.k.a., protobuf) are Google's language-neutral, platform-neutral, extensible mechanism for serializing structured data.
+pulldown-cmark: Pulldown-cmark is a Rust library for parsing CommonMark, a fully specified variant of Markdown.
+quickcheck: Quickcheck is a Rust library that allows you to test properties of your code rather than specific examples. It's inspired by the QuickCheck library for Haskell.
+quickcheck: Quickcheck is a way to run random tests on your code, inspired by the QuickCheck library for Haskell. It allows you to specify properties that your code should have, and then generates test cases to try and refute those properties.
+quick-error: Quick-error is a library for easily creating custom error types, greatly simplifying error handling.
+quote: Quote is a library for safely including literal Rust syntax into token streams. It's typically used for code generation.
+r2d2: R2D2 is a general-purpose connection pool written in Rust. It's useful for reducing the overhead of database connections.
+r2d2-postgres: R2d2-postgres provides Postgres support for the r2d2 connection pool.
+rand: Rand is a library for generating random numbers in Rust. It provides a simple and convenient API for generating random data for a variety of distributions.
+rand_chacha: Rand_chacha is a library that provides ChaCha random number generators for the Rand library.
+rand_distr: Rand_distr provides random number distributions to supplement the Rand crate, adding additional statistical distributions.
+rayon: Rayon is a data-parallelism library for Rust. It allows for easy and efficient execution of parallel tasks using work-stealing scheduling.
+regex: Regex is a Rust library for parsing, compiling, and executing regular expressions, offering functionality comparable to what you'd expect in Perl or Python, implemented as a safe wrapper around the PCRE library.
+regex: The regex crate provides regular expression parsing and execution. It's useful when you need to find, replace, and split on patterns in strings.
+reqwest: Reqwest is an easy and powerful HTTP request library. It features a convenient higher-level API for HTTP requests and handles many details for you, like redirection, compression, and cookies. It supports both synchronous and asynchronous operations, making it a go-to crate for any Rust application needing to make HTTP requests.
+reqwest-blocking: This is a synchronous HTTP client for the Rust programming language. It blocks on network requests, which can be useful in certain contexts where async is not needed or not possible.
+reqwest-middleware: Reqwest-middleware provides a middleware stack for Reqwest, allowing you to augment the behavior of your Reqwest client with custom middleware.
+rocket_contrib: Rocket_contrib is a collection of useful, optional libraries for the Rocket web framework. It includes JSON and template support.
+rocket: Rocket is a web framework for Rust with a focus on ease of use, expressiveness, and speed. It's particularly well suited for building web applications thanks to its declarative syntax and powerful features.
+ron: Ron (Rusty Object Notation) is a simple readable data serialization format that's easy to read, write, and maintain. It was designed to support all the common data types and data structures.
+rouille: Rouille is a micro web framework that's easy to comprehend and simple to get started with, providing just the essentials for building web applications or services.
+rusoto_core and rusoto_*: Rusoto is the AWS SDK for Rust. Rusoto_core is the core part of the Rusoto AWS SDK. It provides the essential parts used by the rest of the SDK. The other rusoto_* crates provide interfaces to various AWS services.
+rusoto: Rusoto is an AWS SDK for Rust. It provides a Rusty interface for AWS services, making it easier to interact with them in a Rust-idiomatic way.
+rusqlite: Rusqlite is a set of Rust bindings for the SQLite database.
+rustache: Rustache is a Rust port of Mustache, a logic-less template system.
+rustbox: RustBox is a Rust implementation of TermBox, which is a simple and clean ncurses alternative for building text-based user interfaces.
+rust-crypto: Rust-crypto is a (mostly) pure-Rust implementation of various common cryptographic algorithms.
+rust-ini: Rust-ini is a straightforward library for ini file reading and writing in Rust.
+rustls: Rustls is a modern TLS library written in Rust. It's designed to provide a safe and performance-focused alternative to OpenSSL.
+rustorm: Rustorm is an SQL-centered ORM (Object-Relational Mapping) that focuses on mapping rows into rust structs, making database manipulation more intuitive.
+rust-s3: Rust-s3 is a Rust library for working with Amazon S3 or any S3-compatible services.
+scopeguard: Scopeguard provides macros for executing code at the end of a scope, helpful for ensuring cleanup is always performed, even if early returns or panics happen.
+scraper: Scraper is an HTML parsing and querying library inspired by BeautifulSoup, built on top of html5ever and cssselect.
+select-rs: Select-rs is a Rust library for extracting useful data from HTML documents, suitable for web scraping.
+semver: Semver is a Rust library for parsing, manipulating, and comparing semantic versions and version requirements.
+serde: Serde is a framework for serializing and deserializing Rust data structures efficiently and generically. It's one of the most widely used crates in Rust because of its versatility and high performance.
+serde_derive: Serde_derive provides a derive macro for the Serialize and Deserialize traits of the Serde serialization framework.
+serde_json: Serde_json is a crate for serializing/deserializing data to and from JSON using the serde serialization framework.
+serde_urlencoded: Serde_urlencoded provides a way to serialize and deserialize application/x-www-form-urlencoded data using the Serde framework, useful when working with HTTP and handling URL-encoded data.
+serde_yaml: Serde_yaml provides a way to serialize and deserialize YAML data using the Serde framework, useful when working with YAML configuration files.
+shiplift: Shiplift is a multi-transport Docker API client, useful for programmatically controlling Docker containers.
+shred: Shred is a library for managing and accessing system resources and components in a concurrency-friendly and data-oriented way. It is used by the Amethyst game engine for resource management.
+slog: Slog is a structured, composable logging for Rust. It provides a way to maintain detailed logs in production, for libraries to add context to log records, and for flexible processing and output of log data.
+specs: Specs is an Entity-Component System written in Rust. It's used for highly parallel game development and other simulation tasks.
+spin: Spin provides a simple spinlock implementation, useful in scenarios where std::sync::Mutex cannot be used.
+structopt: StructOpt combines clap with custom derive to make command-line argument parsing even easier. It allows you to define a struct that matches the desired command line arguments, reducing boilerplate code.
+strum: Strum is a set of macros and traits to work with enums and strings easier in Rust.
+syn: Syn is a parsing library for parsing a stream of Rust tokens into a syntax tree of Rust source code. It's often used in conjunction with the quote and proc_macro2 libraries to create procedural macros.
+tantivy: Tantivy is a full-text search engine library inspired by Apache Lucene and written in Rust.
+tempdir: Tempdir is a library to create a temporary directory and delete its entire contents when it goes out of scope.
+tempfile: Tempfile is a library for creating temporary files and directories. It provides secure, unique, and cleanup-on-drop temp files and directories.
+tera: Tera is a template engine inspired by Jinja2 and the Django template language. It's useful for generating text from a template and some variables.
+termcolor: Termcolor is a simple cross-platform library to deal with terminal colors. It provides a unified way to get access to terminal capabilities, including colors, from various platforms.
+textwrap: Textwrap is a library for word wrapping text. It can be used to format strings into paragraphs.
+thiserror: Thiserror is a library for making error handling more ergonomic by providing a derive macro for generating implementations of std::error::Error.
+thiserror: Thiserror is a library for making error handling straightforward in Rust. It provides a convenient derive macro to automatically implement the standard Error trait methods.
+tide: Tide is a minimal, pragmatic Rust web application framework built for rapid development. It comes with a robust set of features that make building database-backed web applications easier and more fun.
+tikv-client: Tikv-client is a Rust client for TiKV, a distributed transactional key-value database developed by PingCAP.
+time: Time is a simple and easy-to-use date and time library in Rust. It provides user-friendly ways to get the current time, parse and format dates, and compute duration.
+tokio: Tokio is an asynchronous runtime for Rust, focusing on networking, I/O, timers, and more designed for building high-performance networking applications with async and await. It's a key player in the async ecosystem and is often used in combination with async-std.
+tokio-postgres: Tokio-postgres is a non-blocking, async PostgreSQL driver for Rust using Tokio. It allows for efficient use of PostgreSQL database with Rust's async I/O ecosystem.
+tokio-rustls: Tokio-rustls provides async support for rustls, a modern TLS library written in Rust. It's commonly used for adding TLS support in Tokio-based networking applications.
+tokio-threadpool: Tokio-threadpool is a library providing a fast multiproducer, multisum consumer, work stealing, asynchronous, concurrent queue for building task schedulers. It's a part of the Tokio platform.
+tokio-tungstenite: Tokio-tungstenite provides Tokio-compatible bindings to the Tungstenite WebSocket library, allowing you to build asynchronous WebSocket clients and servers.
+toml: The toml crate provides functionality for parsing and serializing TOML documents in Rust.
+tonic: Tonic is a gRPC over HTTP/2 implementation focused on high performance, interoperability, and flexibility, and builds on top of Tokio and Hyper.
+tower: Tower is a library for writing robust networking clients and servers in Rust. It provides reusable components for handling concerns like load balancing, timeouts, retries, and more.
+tracing: Tracing is a framework for instrumenting Rust programs to collect structured, event-based diagnostic information. It's particularly useful in async programming and helps in debugging and understanding program execution.
+tui-rs: Tui-rs is a library for building rich terminal user interfaces and dashboards, with capabilities for drawing tables, sparklines, progress bars and more.
+tungstenite: Tungstenite provides a pure Rust implementation of the WebSocket (RFC6455) protocol. It enables client and server applications to support this protocol for communication.
+twox-hash: Twox-hash provides implementations of the xxHash32 and xxHash64 hash algorithms, which are designed to be fast and produce few collisions.
+typed-arena: Typed-arena is a fast, but limited, allocator. It is particularly well-suited for implementing graphs and other complex data structures that reference themselves.
+typenum: Typenum is a Rust library for type-level numbers evaluated at compile time. It currently supports bits, unsigned integers, and signed integers.
+unicode-segmentation: Unicode-segmentation is a library for iterating over Unicode strings according to the Unicode Standard Annex #29 rules. It allows for character-accurate string segmentation.
+unicode-width: Unicode-width provides functions to compute the width of characters and strings, given by the Unicode Standard Annex #11.
+ureq: Ureq is a minimal request library in Rust. It's a simple, safe, and convenient way to make HTTP requests and handle responses.
+url: Url is a crate for parsing and manipulating URLs, adhering to the URL Standard. This provides a set of tools to work with URLs in a robust and reliable way.
+uuid: This crate provides support for universally unique identifiers (UUIDs). It's useful for generating and parsing UUIDs, which are often used as database keys or for other unique identification purposes.
+vulkano: Vulkano is a safe wrapper around the Vulkan graphics API. It provides an interface that is strongly typed, making illegal states unrepresentable.
+walkdir: Walkdir is a crate that provides an efficient and cross-platform way to recursively walk a directory. It's particularly useful for applications that need to interact with the file system. It's built with iterators and options to custom control the behavior of the traversal.
+warp: Warp is a web server framework built on top of hyper, focusing on ergonomics, safety, and speed. It uses a filter system that makes route handling highly composable and easy to manage. Warp uses the Tokio stack and hyper for HTTP handling.
+wasm-bindgen: Wasm-bindgen facilitates high-level interactions between Rust and JavaScript. It allows you to work with JavaScript objects in Rust, and call JavaScript APIs and functions from Rust.
+wasm-bindgen-futures: Wasm-bindgen-futures provides integration between Rust Futures and JavaScript Promises. This is especially useful for Rust programs targeting WebAssembly.
+wasm-pack: Wasm-pack is a tool for assembling and packaging Rust code into WebAssembly, making it easier to use Rust in web environments.
+whoami: Whoami is a simple library that provides information about the user and system running the program. It's useful for programs that need to know the current user or system's information.
+winapi: Winapi is a direct mapping of Windows API bindings for Rust. It provides raw FFI bindings to all of Windows API.
+winreg: Winreg is a Rust interface to Windows Registry API. It provides an ergonomic way of accessing and manipulating Windows registry keys and values.
+x11-dl: X11-dl is a library for dynamically loading X11 libraries at runtime. This is useful for optional X11 support in a cross-platform application.
+x11rb: X11rb is a library to interact with the X11 protocol for writing X11 clients. It provides an idiomatic, safe, and performant way to create graphical applications targeting the X11 windowing system.
+xdg: Xdg is a library for managing XDG Base Directories in Unix-like operating systems. It assists in managing configuration, data, and cache directories in a standardized and organized way.
+yaml-rust: Yaml-rust is a pure Rust YAML 1.2 implementation, which allows Rust programs to read and write YAML files.
+yew: Yew is a modern Rust framework for creating multi-threaded front-end web apps with WebAssembly. It features a component-based architecture similar to React and Elm.
+zeroize: Zeroize is a library for securely zeroing memory, even for optimized builds where the compiler would otherwise optimize away zeroing operations.
+zip: Zip provides read and write support for the ZIP archive file format, including compression.
