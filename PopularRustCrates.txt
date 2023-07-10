@@ -144,8 +144,8 @@ regex: Regex is a Rust library for parsing, compiling, and executing regular exp
 reqwest: Reqwest is an easy and powerful HTTP request library. It features a convenient higher-level API for HTTP requests and handles many details for you, like redirection, compression, and cookies. It supports both synchronous and asynchronous operations, making it a go-to crate for any Rust application needing to make HTTP requests.
 reqwest-blocking: This is a synchronous HTTP client for the Rust programming language. It blocks on network requests, which can be useful in certain contexts where async is not needed or not possible.
 reqwest-middleware: Reqwest-middleware provides a middleware stack for Reqwest, allowing you to augment the behavior of your Reqwest client with custom middleware.
-rocket_contrib: Rocket_contrib is a collection of useful, optional libraries for the Rocket web framework. It includes JSON and template support.
 rocket: Rocket is a web framework for Rust with a focus on ease of use, expressiveness, and speed. It's particularly well suited for building web applications thanks to its declarative syntax and powerful features.
+rocket_contrib: Rocket_contrib is a collection of useful, optional libraries for the Rocket web framework. It includes JSON and template support.
 ron: Ron (Rusty Object Notation) is a simple readable data serialization format that's easy to read, write, and maintain. It was designed to support all the common data types and data structures.
 rouille: Rouille is a micro web framework that's easy to comprehend and simple to get started with, providing just the essentials for building web applications or services.
 rusoto: Rusoto is an AWS SDK for Rust. It provides a Rusty interface for AWS services, making it easier to interact with them in a Rust-idiomatic way.
