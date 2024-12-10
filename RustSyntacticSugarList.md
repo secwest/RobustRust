@@ -14,7 +14,7 @@ Here's a list of shorthand notations, shortcuts, and other syntactically unusual
 4. Method Chaining: `"hello world".to_string().to_uppercase()`.
 5. Closure Shorthand: `|&x| x * x` instead of `|x: &i32| -> i32 { *x * *x }`.
 6. `?` Operator: `File::open("file.txt")?` instead of explicit error handling with `match`.
-7. Turbofish Operator: `x.parse::&lt;i32>()` when type inference is not possible.
+7. Turbofish Operator: `x.parse::<i32>()` when type inference is not possible.
 8. Underscores in Numeric Literals: `1_000_000` for better readability.
 9. Type Aliases: `type Kilometers = i32;` for code clarity.
 10. Associated Constants: `const PI: f64` inside a trait or struct.
@@ -30,7 +30,7 @@ Here's a list of shorthand notations, shortcuts, and other syntactically unusual
 20. Dereference Operator: `*` for accessing the value behind a reference.
 21. Ownership Transfer: `let x = y;` moves ownership of `y` to `x`.
 22. Borrowing: `&y` to create a shared reference without transferring ownership.
-31. Impl Trait: `fn return_iterator() -> impl Iterator&lt;Item = i32>` for returning an anonymous type that implements a specific trait.
+31. Impl Trait: `fn return_iterator() -> impl Iterator<Item = i32>` for returning an anonymous type that implements a specific trait.
 32. Extern Crate: `extern crate my_crate;` for including external crates in Rust 2015 edition (not required in Rust 2018 edition and later).
 33. Macro Invocation: `println!("Hello, world!");` invoking a macro with a `!` at the end.
 34. Attribute Macros: `#[derive(Debug)]` for automatically implementing traits or other code-generation tasks.
@@ -47,7 +47,7 @@ Here's a list of shorthand notations, shortcuts, and other syntactically unusual
 45. Associated Types: `type Output;` within a trait, for specifying a type that is associated with the implementing type.
 46. Default Trait Implementations: `fn method(&self) -> Type { ... }` within a trait, for providing default implementations that can be overridden by implementers.
 47. Trait Bounds: `T: Trait` in generic function signatures, for constraining the generic types to implement specific traits.
-48. Higher-Ranked Trait Bounds: `for&lt;'a> T: Trait&lt;'a>` for constraining a generic type to implement a trait with an associated lifetime.
+48. Higher-Ranked Trait Bounds: `for<'a> T: Trait<'a>` for constraining a generic type to implement a trait with an associated lifetime.
 49. Lifetime Annotations: `'a` for explicitly specifying lifetimes of references in structs, functions, and traits.
 50. Static Lifetimes: `'static` for references with the longest possible lifetime, living for the entire duration of the program.
 51. Range Syntax: `a..b` for creating a range of values between `a` and `b`.
@@ -56,7 +56,7 @@ Here's a list of shorthand notations, shortcuts, and other syntactically unusual
 54. Field Init Shorthand: `Foo { a, b }` for initializing a struct's fields with the same name as the variables.
 55. C-style Enum: `enum Enum { A, B, C }` for declaring a C-style enumeration.
 56. Use Renaming: `use std::io::Result as IoResult;` for renaming an imported item.
-57. Type Alias: `type MyResult&lt;T> = Result&lt;T, MyError>;` for creating an alias for a type.
+57. Type Alias: `type MyResult<T> = Result<T, MyError>;` for creating an alias for a type.
 58. Raw Pointers: `*const T` and `*mut T` for raw (unsafe) pointers.
 59. Repeat Expression: `[0; 5]` for creating an array with repeated values.
 60. String Literal Concatenation: `"Hello, " "world!"` for concatenating adjacent string literals.
@@ -64,7 +64,7 @@ Here's a list of shorthand notations, shortcuts, and other syntactically unusual
 63. Dereference Operator: `*x` for dereferencing a reference or pointer.
 64. Raw Identifier: `r#type` for using reserved keywords as identifiers.
 65. Loop Labels: `'label: loop { ... }` for labeling loops, and `break 'label;` or `continue 'label;` for breaking or continuing labeled loops.
-66. Async Functions: `async fn foo() -> Result&lt;(), ()> { ... }` for declaring asynchronous functions.
+66. Async Functions: `async fn foo() -> Result<(), ()> { ... }` for declaring asynchronous functions.
 67. Pin: `std::pin::Pin` for creating a pinned reference, which ensures the memory it points to will not be moved.
 68. Unsized Types: `T: ?Sized` trait bound for allowing generic types to be unsized.
 69. Zero-sized types: `struct Zst;` for declaring a zero-sized type (ZST) that occupies no memory.
@@ -72,7 +72,7 @@ Here's a list of shorthand notations, shortcuts, and other syntactically unusual
 71. Associated Constants: `const VALUE: i32 = 42;` for defining associated constants within trait or struct implementations.
 72. Or-patterns: `Some(0) | Some(1) | Some(2)` for matching multiple patterns in a single arm.
 73. Anonymous Lifetime: `'_` for specifying an anonymous lifetime parameter.
-74. Boxed trait objects: `Box&lt;dyn Trait>` for creating a boxed trait object, which can hold any type that implements the trait.
+74. Boxed trait objects: `Box<dyn Trait>` for creating a boxed trait object, which can hold any type that implements the trait.
 75. Dereference coercion: Automatically dereferencing a reference to a reference, e.g., `&String` to `&str`.
 76. Diverging type: `!` for specifying a diverging type, which indicates that the function does not return.
 77. Module shorthand: `mod.rs` for defining a module in a separate file.
@@ -103,15 +103,15 @@ Here's a list of shorthand notations, shortcuts, and other syntactically unusual
 8. Existential types: `existential type Foo: Trait;` for declaring a type alias for an opaque type that implements a given trait (experimental feature).
 9. Struct update syntax: `..base` for creating a new struct with some fields updated from an existing struct.
 10. Or patterns: `A | B` for matching on multiple patterns in a single arm of a `match` or `if let` expression.
-11. Const generics: `struct Foo&lt;const N: usize> { ... }` for defining generic parameters with constant values (experimental feature).
+11. Const generics: `struct Foo<const N: usize> { ... }` for defining generic parameters with constant values (experimental feature).
 12. Inline attributes: `#[inline]` and `#[inline(always)]` for suggesting that a function be inlined by the compiler.
-1. Trait objects: `Box&lt;dyn Trait>` for creating a trait object, which is a dynamically dispatched, heap-allocated object implementing a specific trait.
+1. Trait objects: `Box<dyn Trait>` for creating a trait object, which is a dynamically dispatched, heap-allocated object implementing a specific trait.
 2. Automatic dereferencing: Rust automatically dereferences references and smart pointers when calling methods, so you don't need to explicitly dereference them using `*`.
 3. Range patterns: `a..=b` for matching a range of values inclusively within a `match` expression.
 4. Nested import groups: `use foo::{bar, baz::{qux, quux}};` for importing multiple items from the same module in a more concise way.
 5. Enum variant aliases: `type Alias = Enum::Variant;` for creating a type alias for a specific enum variant.
 6. Destructuring assignment: `let (a, b) = (1, 2);` for unpacking a tuple or struct into individual variables.
-7. "turbofish" for const generics: `foo::&lt;{ value }>()` for specifying const generic parameters (similar to the turbofish operator for type generics).
+7. "turbofish" for const generics: `foo::<{ value }>()` for specifying const generic parameters (similar to the turbofish operator for type generics).
 8. Nested functions: Rust allows you to define functions inside other functions, which can help with organizing code and encapsulating logic.
 1. Visibility shortcut: `pub(crate)` or `pub(super)` can be used to specify the visibility of an item within a crate or its parent module, respectively.
 2. Inline assembly: Rust provides support for inline assembly through the `asm!` macro, which enables you to include assembly language code directly in your Rust program for highly optimized or low-level operations.
@@ -248,7 +248,7 @@ fn main() -> Result<(), std::io::Error> {
 
 Turbofish Operator
 
-The turbofish operator (`::&lt;>`) is used to specify generic type parameters when the type cannot be inferred:
+The turbofish operator (`::<>`) is used to specify generic type parameters when the type cannot be inferred:
 
 
 ```
@@ -1079,7 +1079,7 @@ fn main() {
 ```
 
 
-Async Functions: `async fn foo() -> Result&lt;(), ()> { ... }` for declaring asynchronous functions.
+Async Functions: `async fn foo() -> Result<(), ()> { ... }` for declaring asynchronous functions.
 
 
 ```
@@ -1222,7 +1222,7 @@ fn main() {
 ```
 
 
-Boxed trait objects: `Box&lt;dyn Trait>` for creating a boxed trait object, which can hold any type that implements the trait.
+Boxed trait objects: `Box<dyn Trait>` for creating a boxed trait object, which can hold any type that implements the trait.
 
 
 ```
